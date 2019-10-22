@@ -1,0 +1,19 @@
+location对象 
+表示载入窗口的URL(地址栏)
+location.href="http://www.diudiudiu.com";属性
+location.assign("http://www.diudiudiu.com"); 方法
+设置跳转的页面
+
+location.reload(); 重新加载 刷新
+location.replace("http://www.diudiudiu.com"); 连接不记录历史记录无法后退
+
+window.location.hash 地址栏上 锚链接#号后面的
+window.location.host 主机名及端口号
+window.location.hostname 主机名
+window.location.pathname 文件路径 相对路径端口 没有域名
+window.location.port 端口号
+window.location.protocol 协议
+window.location.search 搜索的内容 ？后 的内容
+
+navigator对象
+包含大量有关Web浏览器的信息，在检测浏览器及操作系统上非常有用

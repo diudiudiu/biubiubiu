@@ -1,0 +1,2262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>一个前端小白的博客-diuidiudiu</title>
+
+	<meta name="description" content="前端菜鸟diudiudiu的博客，入门知识点及个人笔记。" />
+	<meta name="Keywords" content="diudiudiu，github，前端，blog，博客。" />
+	<link rel="shortcut icon" href="favicon.ICO" type="image/x-icon" />
+	<!-- 整体样式 -->
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<!-- reset -->
+	<link rel="stylesheet" type="text/css" href="css/public-clear.css" />
+	<!-- icon字体 -->
+	<link rel="stylesheet" type="text/css" href="css/icon.css" />
+
+	<script type="text/javascript" src="js/script.js"></script>
+</head>
+
+<body>
+	<div class="loading" id="loading">
+		<div class="pic">
+			<img src="images/loading.gif" alt="">
+			<span>页面加载中...请稍后</span>
+		</div>
+
+	</div>
+	<div id="box">
+		<div class="left" id="left">
+			<div class="goleft hide" id="goleft">
+				<img src="images/left.png" alt="">
+			</div>
+			<div class="first">
+				<div class="myphoto">
+					<img src="images/myphoto.JPG" alt="">
+				</div>
+			</div>
+			<div class="second">
+				<p class="name">diudiudiu <br><i class="icon-location2" title="沈阳"></i>沈阳工业大学</p>
+				<p class="introduce">
+					<em style="font-size: 20px;font-weight: bold; color: #F20C40;">前端求个师傅。</em>
+					<br>
+					目前掌握HTML,CSS,JS,Less。<br>
+					正在学习Node,Vue,ES6。<br>
+					了解微信小程序,JQuery。<br>
+					请写清来意。<br>
+					可划过下方icon扫描二维码。<br>
+					欢迎互相交流。
+				</p>
+				<ul class="nav" id="nav1">
+					<li><a href="#write">日志</a>/</li>
+					<li><a href="#photowall">相册</a>/</li>
+					<li><a href="#board">留言板</a></li>
+				</ul>
+				<ul class="nav" id="nav2">
+					<li><a href="#">友情链接</a>/</li>
+					<li><a href="#">打赏</a>/</li>
+					<li><a href="#">关于我</a></li>
+				</ul>
+				<ul id="icon">
+					<li class="github">
+						<a href="https://github.com/diudiudiu" title="github"><i class="icon-github"></i></a>
+					</li>
+					<li class="qq" id="qq">
+						<a href="#" title="QQ"><i class="icon-qq"></i></a>
+						<div class="QQ" id="QQ">
+							<div class="triangel"></div>
+							<div class="imgbg">
+								<img src="images/me/QQ.jpg" alt="qq" style="height: 180px; width: 180px;">
+							</div>
+						</div>
+					</li>
+
+					<li class="WeChat" id="WeChat">
+						<a href="#" title="WeChat"><i class="icon-wechat"></i></a>
+						<div class="VX" id="VX">
+							<div class="triangel"></div>
+							<div class="imgbg">
+								<img src="images/me/VX.png" alt="WeChat" style="height: 180px; width: 180px;">
+							</div>
+						</div>
+
+					</li>
+					<li class="mail">
+						<a href="Mailto:171738749@qq.com" title="E-mail"><i class="icon-envelop"></i></a>
+						<div class="Email" id="Email">
+							<div class="triangel"></div>
+							<p>mjx171738749@foxmail.com </p>
+						</div>
+					</li>
+					<li class="weibo">
+						<a href="https://weibo.com/u/6116762836?is_all=1" title="weibo"><i class="icon-sina-weibo"></i></a>
+					</li>
+					<li class="resume">
+						<a href="#" title="resume"><i class="icon-file-text2"></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="right" id="right">
+			<div class="rightnav">
+
+				<a href="https://github.com/diudiudiu/diudiudiu.github.io">
+					<div class="star"><i class="icon-github"></i>Star</div>
+				</a>
+				<a href="https://github.com/diudiudiu/diudiudiu.github.io/stargazers">
+					<div class="starnum">1</div>
+				</a>
+				<div class="circle">
+					<input class="so" id="so" type="text" placeholder="例:CSS">
+					<i class="icon-search search" id="search" title="搜索"></i>
+
+				</div>
+
+			</div>
+			<div class="rightbody">
+				<div class="write" id="write">
+					<h1>日志</h1>
+					<ul>
+						<li>
+							<h2>CSS-reset<span class="date"></span></h2>
+							<p class="list">
+								在 HTML标签在浏览器里有默认的样式，不同浏览器的默认样式之间也会有差别。为了更好的布局和开发，需要清除HTML标签的的默认样式。这就是CSS
+								reset。个人的理解就是自己用CSS来重新定义各个HTML标签。
+								1.最基础的reset：
+								&emsp; * { padding: 0; margin: 0; border: 0; }
+								2.Yahoo！的reset代码。（个人用到最多的！！）
+								&emsp; body, div, dl, dt, dd, ul, ol, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p,
+								blockquote, th, td {padding:0; margin:0;} <br>
+								&emsp; fieldset, img{border:0;} <br>
+								&emsp; table {border-collapse:collapse; border-spacing:0;} <br>
+								&emsp; ol, ul {list-style:none;} <br>
+								&emsp; address, caption, cite, code, dfn, em, strong, th,var { font-weight:normal; font-style:normal;}
+								<br>
+								&emsp; caption, th{text-align:left;} <br>
+								&emsp; h1, h2, h3, h4, h5, h6{font-weight:normal; font-size:100%;} <br>
+								&emsp; q:before, q:after {content: '';} <br>
+								&emsp; abbr,acronym{border:0;}
+								各个网站论坛有着各种各样的CSS reset，当然CSS reset也可以按照个人习惯去设置。<br>
+								<em style="color: red; font-weight: bold;">此篇文章只是用于提醒HTML标签有默认样式！！！</em>
+							</p>
+						</li>
+						<li>
+							<h2>绝对路径相对路径<span class="date"></span></h2>
+							<p class="list">
+								HTML众多标签都离不开文件引用，引用方式分为绝对路径和相对路径。
+								相对路径：通过名字可以解释，相对于本文件的位置进行路径描述。
+								../ ：代表文件所在的父级目录。
+								../../ ：代表文件所在的父级目录的父级目录。
+								......以此类推。
+								个人理解为../表示返回上级目录，/表示进入某文件。
+								绝对路径：网络上从https：//开始写路径，本地从磁盘位置开始写。
+							</p>
+						</li>
+						<li>
+							<h2>语义化标签<span class="date"></span></h2>
+							<p class="list">
+								1.语义化标签的作用：
+								1.1从开发角度考虑是提高代码的可读性可维护性
+								1.2 网站的发布者：SEO
+								2.语义化标签兼容问题
+								2.1 IE9以下不支持H5标签（大部分CSS3属性，一些H5的API）
+								2.2 IE9以下不认识，把这些标签当作行内元素去看待
+								2.3 语义化标签需要动态创建 document.createElement('header') 同时设置块元素
+								兼容插件 <a class="link" href="#html5shiv">html5shiv.js</a>
+							</p>
+						</li>
+						<li>
+							<h2>DOMContentLoaded 与 load事件<span class="date"></span></h2>
+							<p class="list">
+								DOMContentLoaded:当初始的 HTML 文档被完全加载和解析完成之后，DOMContentLoaded 事件被触发，而无需等待样式表、图像和子框架的完成加载。
+								load:当一个资源及其依赖资源已完成加载时，将触发load事件。
+								首屏时间: “计算这个网页从空白到出现内容所花费的时间”。
+								这段时间其实就是HTML 文档加载和解析的时间。也就是DOMContentLoaded 事件触发之前所经历的时间。
+								对于首屏时间而言，js放在HTML文档的开头和结尾处效果是一样的而js放在结尾的目的并不是为了减少首屏时间，而是由于js经常需要操纵DOM，放在后面才更能保证找到DOM节点。
+								async、defer与DOMContentLoaded详细关系请看<a href="https://www.cnblogs.com/Bonnie3449/p/8419609.html"
+									class="link">https://www.cnblogs.com/Bonnie3449/p/8419609.html</a>
+							</p>
+						</li>
+
+						<li>
+							<h2>Grid布局与Flexbox<span class="date"></span></h2>
+							<p class="list">
+								Flexbox 是一维布局，只能在一条直线上放置内容区块
+								兼容IE10
+								display: -webkit-flex; /* Safari */
+								display: flex;
+								Flex容器 设置display: flex;
+								Flex项目（flex item） 父容器内的子级
+								水平的主轴（main axis）
+								垂直的交叉轴（cross axis）
+								单个项目占据的主轴空间叫做main size
+								单个项目占据的交叉轴空间叫做cross size
+
+								父容器属性
+								flex-direction 主轴的方向
+								row（默认值）：主轴为水平方向，起点在左端。
+								row-reverse：主轴为水平方向，起点在右端。
+								column：主轴为垂直方向，起点在上沿。
+								column-reverse：主轴为垂直方向，起点在下沿。
+								---------------------------------------------------
+								flex-wrap 如果一条轴线排不下，如何换行
+								nowrap（默认）：不换行。
+								wrap：换行，第一行在上方。
+								wrap-reverse：换行，第一行在下方。
+								---------------------------------------------------
+								justify-content 主轴上的对齐方式。
+								flex-start（默认值）：左对齐
+								flex-end：右对齐
+								center： 居中
+								space-between：两端对齐，项目之间的间隔都相等。
+								space-around：项目之间的间隔比项目与边框的间隔大一倍。
+								---------------------------------------------------
+								align-items 交叉轴上对齐方式。
+								flex-start：交叉轴的起点对齐。
+								flex-end：交叉轴的终点对齐。
+								center：交叉轴的中点对齐。
+								baseline: 项目的第一行文字的基线对齐。
+								stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。
+								---------------------------------------------------
+								align-content 多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用
+								lex-start：与交叉轴的起点对齐。
+								flex-end：与交叉轴的终点对齐。
+								center：与交叉轴的中点对齐。
+								space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。
+								space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。
+								stretch（默认值）：轴线占满整个交叉轴。
+								---------------------------------------------------
+
+								Grid 是一个二维布局，根据设计需求将内容区块放置到任何地方
+								兼容IE11
+								当display 设置为 grid 那么column float clear vertical-align 属性会无效
+								引入的单位
+								fr:剩余空间分配数。用于在一系列长度值中分配剩余空间，如果多个指定了多个部分，则剩下的空间根据各自的数字按比例分配
+								gr(W3C未认可)：网格数
+
+								网格容器 (Grid Container) 设置display:grid 父容器
+								网格项 (Grid Item) 父容器内的子级 是HTML中能够找到的DOM元素
+								网格线 (Grid Line) 组成网格项的分界线
+								网格轨道 (Grid Track) 两个相邻的网格线之间
+								网格单元 (Grid Cell) 两个相邻的列网格线和两个相邻的行网格线组成的是网格单元
+								网格区域 (Grid Area) 四个网格线包围的总空间（含一个或多个网格单元）
+								html代码
+								&lt;div class="container">
+								&lt;div class="item1">&lt;/div>
+								&lt;div class="item2">&lt;/div>
+								&lt;div class="item3">&lt;/div>
+								&lt;div class="item4">&lt;/div>
+								&lt;div class="item5">&lt;/div>
+								&lt;div class="item6">&lt;/div>
+								&lt;div class="item7">&lt;/div>
+								&lt;div class="item8">&lt;/div>
+								&lt;div class="item9">&lt;/div>
+								&lt;/div>
+								css属性:
+								.container{
+								grid-template行列轨道大小
+
+								grid-template-columns列/grid-template-rows行/grid-template-areas网格区域
+								属性值
+								1.轨道大小(track-size):可以使用css长度(px,em)百分比或fr
+								grid-template-columns:40px 50px auto 50px 40px;
+								这个auto为剩下的宽度，当出现fr单位 auto为最小宽度即内容宽度
+								grid-template-rows:25% 100px auto;
+								若行不够那么会自动添加 自动增加的高度为auto
+								盒子若设置了高度 那么增加的行会影响到之前设置的高度
+								例如
+								height:1500px;
+								grid-template-rows:1fr
+								那么自动增加的是行高度为auto第一行为1500-增加的行数*auto的高度
+								---------------------------------------------------
+								2.网格线名字(line-name):可以选择任何名字
+								grid-template-columns:[first] 40px [line2 second] 50px [line3] auto [col4-statr] 50px [five] 40px
+								[end];[]中可以设置多个名字
+								grid-template-rows:[row1-start] 25% [row1-end] 100px [third-line] auto [last-line];
+
+								grid-template-areas:"header header header header header "
+								"main main main . maintwo"
+								"footer footer footer footer footer";
+								网格区域一定要是矩形，可以是1行，1列，多行多列，1个网格单元
+								第一行为header
+								第二行 前三块为main 第四块为空 第五块为maintwo
+								第三行为footer
+								当定义了区域后 每一条网格线都会有名字 区域名字-start 区域名字-end
+								每一行用双引号括起来
+								属性值：
+								1.grid-area-name 使用grid-area属性设置的网格
+								2.‘.’ 点号代表一个空网格单元
+								3.none没有定义网 格区域
+
+								简写
+								grid-template：
+								[row1-start] "header header header" 25px [row1-end]
+								[row2-start] "footer footer footer" 25px [row2-end] / auto 50px auto;
+								等同于
+								grid-template-columns:auto 50 auto;
+								grid-template-rows:[row1-start] 25px [row1-end row2-start] 25px [row2-end];
+								grid-template-areas:"header header header"
+								"footer footer footer" ;
+
+								---------------------------------------------------
+								grid-column-gap/grid-row-gap
+								grid-column-gap：10px;
+								简写grid-gap:55px 50px; row/column
+								gap:55px 50px;
+								一个数字就都为 这一个值
+								网格线的大小 网格的间距
+								---------------------------------------------------
+								对齐方式
+								justify横轴
+								justify-items:网格容器沿着横轴内的对齐方式
+								align纵轴
+								align-items:网格容器沿着纵轴内的对齐方式
+								start 内容与网格区域左/上侧对齐
+								end 内容与网格区域右/下侧对齐
+								center内容与网格区域居中对齐
+								stretch 默认值 占据整个区域空间
+								简写 place-items：纵向 横向
+								一个值就都为 这一个
+								---------------------------------------------------
+								justify-content:网格容器内的网格沿着横轴内的对齐方式
+								align-content:网格容器内的网格沿着纵轴内的对齐方式
+								start 内容与网格区域左/上侧对齐
+								end 内容与网格区域右/下侧对齐
+								center内容与网格区域居中对齐
+								stretch 调整grid item 的大小 让宽度填充整个网格容器
+								space-around： 在grid item 之间设置均等宽度的空白间隙，其外边缘间隙的大小为中间空白间隙宽度的一半
+								space-between: 在grid item 之间设置均等宽度的空白间隙，外边缘无间隙
+								space-evenly：在grid item 之间设置均等宽度的空白间隙，包括外边缘
+								start 与 stretch区别 若宽度设置为auto start 为最小宽度 stretch为最大宽度
+								简写place-content :start end; 纵轴 横轴
+								---------------------------------------------------
+								grid-auto:
+								grid-auto-columns / grid-auto-rows
+								指定自动生成的网格轨道（隐式网格轨道）的大小
+								隐式网格轨道在显式的定位超出了指定的网格范围的行或列时被创建
+								例如 设置两行两列 把一个网格项目放置到第五列 那么创建的第三列第四列就是隐式网格轨道
+								grid-auto-flow 控制自动填充算法的工作方式
+								属性值：
+								row: 依次填充每行，根据需要添加的新行
+								column 依次填充每列，根据需要添加的新行
+								dense 如果后面出现较小的 grid item 则尝试在网格中填充空洞
+								---------------------------------------------------
+								网格线划分区域
+								grid-column-start:2;
+								grid-column-end:4;
+								列从第二条线到第四条线
+								grid-row-start:2;
+								grid-row-end:span 2;
+								span表示跨越几条线
+								负数表示倒数
+								如果没有声明grid-column-end
+								grid-row-end默认跨越一个轨道
+								网格项可以相互重叠可以用z-index来控制
+								简写
+								grid-column:2 / 4;
+								grid-row:2 / span2;
+								grid-area:row1-start / 2 / 3 /five;
+								行列
+								grid-area：区域名字
+								}
+
+
+							</p>
+						</li>
+						<li>
+							<h2 id="animation">CSS3动画animation<span class="date"></span></h2>
+							<p class="list">
+								@keyframes 动画名 {
+								[ [ from | to | 百分比 ]
+								}
+								from等于 0%.
+								to等于 100%.
+								例如
+								@keyframes fontSizeBig {
+								from { font-size:20px;}
+								30% { font-size:22px;}
+								50% { font-size:24px;}
+								70% { font-size:26px;}
+								80% { font-size:28px;}
+								to{ font-size:30px;}
+								}
+								CSS
+								animation:
+								1.animation-timing-function 时间函数动画过渡
+								与transition的事件函数类似
+								2.animation-direction 动画方向
+								normal 正序播放
+								reverse 倒序播放
+								alternate 奇数次正向播放，在偶数次反向播放。交替播放
+								alternate-reverse 在奇数次反向播放，偶数次正向播放。反向交替播放
+								3.animation-delay 动画延迟(s)
+								4.animation-fill-mode 动画播放前后应用元素的样式
+								none 动画执行前后不改变任何样式
+								forwards 保持目标动画最后一帧的样式
+								backwards 保持目标动画第一帧的样式
+								both 动画将会执行 forwards 和 backwards 执行的动作。
+								简写：
+								animation: fontSizeBig 2s linear 1s infinite alternate forwards;
+								延时1s 动画2s 一直重复（infinite）反复运动（alternate） 保持目标动画最后一帧的样式（forwards）
+
+							</p>
+						</li>
+						<li>
+							<h2>img底部空白间隙<span class="date"></span></h2>
+							<p class="list">
+								原因：img的默认的垂直对齐方式vertical-align的默认值是baseline，以X字母的下方为基准。
+								解决方法：
+								1.修改img行内元素的垂直居中方式
+								img {
+								&emsp; vertical-align: bottom;
+								&emsp; /* vertical-align: top;*/
+								}
+								2.修改父元素行高，使行高变小，这样基线下方的位置基本可以忽略。
+								&emsp; line-height: 0px;
+								3.让img变成块级元素，不在受行内基线的影响。
+								img {
+								&emsp; display: block;
+								}
+
+								浮动也可以让元素变成块级
+								img {
+								&emsp; float：left;
+								}
+							</p>
+						</li>
+						
+						<li>
+							<h2>HTML5api<span class="date"></span></h2>
+							<p class="list">
+								document.querySelector() 获取符合选择器的第一个元素
+								document.querySelectorALL() 获取符合选择器的所有元素
+								基于一个classList的方法
+								add() 添加一个类
+								remove() 删除一个类
+								toggle() 切换一个类
+								contains() 是否包含一个类名
+								DOM.classList 获取的是这个DOM元素的所有class
+								DOM.classList.add('blue') 为DOM元素添加一个为blue的类
+								&lt;div data-user="wl" data-user-age="18">&lt/div>
+								自定义属性 data-*
+								命名规则遵循驼峰命名法
+								获取方式 dataset
+								DOM.dataset 获取所有自定义属性
+								获取单个属性DOM.dataset.user
+								设置单个属性DOM.dataset.user='gg'
+								JQuery的data是操作内存的
+								H5的data是操作DOM的
+								全屏显示
+								在IE9一下不支持
+								由于浏览器兼容问题需要加前缀
+								DOM.requestFullScreen()开启全屏显示
+								DOM.cancelFullScreen()关闭全屏显示
+								webkitRequestFullScreen()//Chrome
+								webkitCancelFullScreen()
+								mozRequestFullScreen()//FireFox
+								mozCancelFullScreen()
+								document.fullScreen 检测当前是否处于全屏
+								document.webkitFullScreen
+								document.mozFullScreen
+								每一个元素都可全屏
+								页面文档全屏要调用
+								document.documentElement.requestFullScreen()
+								取消全屏跟元素无关
+								直接用document.cancelFullScreen()
+								注意不是body
+								多媒体
+								自定义播放器
+								&lt;video src="video/diudiudiu.mp4" controls> &lt;/video>
+								controls表示底下控制栏
+								为保证各个一致性 一般自制控制栏
+								---------------------------------------------------
+								历史相关api
+								history
+								history.back() 去上一条了历史
+								history.forword() 去下一条历史
+								history.go() 相对当前 跳多少条记录 正数 抢走
+								H5新增
+								history.pushState(数据，标题，历史记录的地址) 加一条历史记录
+								history.replaeState(数据，标题，历史记录的地址) 替换一条历史记录
+								window.onpopstate 监听历史切换事件
+								实现网页中常见的网页开发模式
+								单页面应用程序：在一个页面上实现大部分
+								---------------------------------------------------
+								本地存储
+								以前用cookies 大小4k
+								sessionStorage 5M
+								localStorage 20M
+								只能存储字符串，可以将对象JSON.stringify()编码后存储
+								window.sessionStorage 用的比较少 一般存放在服务端
+								生命周期为关闭浏览器窗口
+								在同一个窗口页面下数据可以共享
+								window.localStorage 相当于在本地存放一个文件
+								永久有效 除非手动删除（服务器方式访问然后清除缓存）
+								多窗口页面共享
+								方法名字
+								setItem(key,value)设置存储内容
+								getItem(key) 读取存储内容
+								removeItem(key) 删除键值为key的存储内容
+								clear()清空所有存储内容
+								---------------------------------------------------
+								地理位置 基于国外的定位
+								获取当前地理信息
+								navigator.geolocation.getCurrentPosition(function(postion){
+								定位成功函数
+								postion定位信息对象
+								postion 属性coords 坐标对象
+								coords 有经纬度 海拔....
+								latitude纬度 longitude精度
+								},function(PositionE rror){
+								定位失败函数
+								定位失败信息
+								})
+								重复获取当前地理信息
+								navigator.geolocation.watchPosition(function(postion){
+								定位成功函数
+								postion定位信息对象
+								postion 属性coords 坐标对象
+								coords 有经纬度 海拔....
+								latitude纬度 longitude精度
+								},function(PositionE rror){
+								定位失败函数
+								定位失败信息
+								})
+								实际开发中调用第三方API来实现地理信息
+								---------------------------------------------------
+								离线缓存
+								在html添加属性manifest="文件名.appcache"
+								manifest文件格式
+								顶行写CACHE MANIFEST
+								CACHE:换行 指定我们需要缓存的静态资源 如css，image,js
+								NETWORK:换行 指定需要在线访问的资源
+								FALLBACK: 换行 当被缓存的文件找不到时的备用资源
+								---------------------------------------------------
+								拖拽 drag事件
+								标签上加 draggable="true"就可让该元素被拖拽
+								---------------------------------------------------
+								文件读取
+								var file=document.querySelector('.file');
+								file.onchange=function(){
+								var reader = new FileReader();
+								reader.readAsRataURL(this.files[0]);
+								reader.onload=function(){
+								document.querySelector('#img').src=this.result;
+								}
+								}
+								---------------------------------------------------
+								网络状态
+								window.navigator.online 可以返回当前网络状态
+								online 在线
+								offline 离线
+							</p>
+						</li>
+						<li>
+							<h2>HTML+CSS知识点<span class="date"></span></h2>
+							<p class="list">
+
+								table标签：
+								&emsp; cellspacing 是单元格与单元格的距离 与盒子模型的margin
+								&emsp; cellpadding 是单元格内填充 与盒子模型的padding
+								&emsp; 三参为0(border cellpadding cellspacing)
+								&emsp; caption表格标题 必须紧跟table标签后。
+								&emsp; 最好划分thead,tbody。
+								&emsp; 合并单元格：
+								&emsp; colspan 水平跨度 rowspan 纵向跨度
+								&emsp; CSS属性：
+								&emsp; border-collapse:collapse; 合并相邻边框
+
+								from表单：(具体表单练习在<a
+									href="https://github.com/diudiudiu/webpractice/tree/master/HTML%2BCSS%E5%9F%BA%E7%A1%80%E7%BB%83%E4%B9%A0">这里</a>)
+								&emsp; 完整的表单分为三个部分，表单元素、提示信息和表单域。
+								&emsp; label标签：用于绑定一个表单元素（for="id"）
+								&emsp; H5新增input加属性
+								&emsp; input type="text"
+								&emsp; placeholder="提示信息"
+								&emsp; autofocus&emsp;默认获取光标
+								&emsp; required&emsp;必填项
+								&emsp; accesskey&emsp;键盘快捷键获取焦点
+
+								&emsp; input type="file"
+								&emsp; multiple 多选文件
+								HTML5
+								&emsp; audio元素支持三种音频格式 Ogg MP3 Wav
+								&emsp; &emsp; autoplay 自动播放
+								&emsp; &emsp; controls 控制
+								&emsp; &emsp; loop 循环播放
+								&emsp; video元素支持三种视频格式 OGG MPEG 4 WebM
+								mark 标签突出显示文本
+
+								注意！！！p h1-h6标签内不放块元素。
+								行内块与行内块之间存在缝隙，浮动可解决。
+								CSS：
+								&emsp;float浮动：
+								&emsp; 可让元素默认转换为inline-block元素(行内元素加float则这个元素可直接设置宽高)浮动元素不会超过父元素padding值。
+
+								&emsp; 浮动不是完全的脱离标准流。文字不能绝对的覆盖。
+
+								&emsp;
+								多个有边框div在一行可用margin-left或者margin-right:-1px;去除边框紧贴变宽的效果。hover触发边框时，应加上position：relative以此来提升z-index。也可在原盒子附加position：relative。
+								清除浮动：
+								1.额外标签
+								在浮动的块元素后加个空标签&lt;div style="clear: both;"&gt;&lt;/div&gt; 或&lt;br /&gt;等标签。
+								缺点：添加许多无意义的标签，结构化差。
+								2.给父级元素加overflow属性方法
+								可以通过BFC的方式，给父级元素加：overflow为 hidden(主要) | auto | scroll。
+								缺点内容增多时候容易造成不会自动换行导致内容被隐藏，无法显示需要溢出的元素。
+								3.使用afert伪元素
+								（百度，网易）
+								.clearfix:after{
+								&emsp; content:"";
+								&emsp; display:block;
+								&emsp; height:0;
+								&emsp; clear:both;
+								&emsp; visibility:hidden;
+								}
+								.clearfix{
+								&emsp;&emsp; *zoom:1; //IE6-7专有
+								}
+								缺点：由于IE6-7不支持：after，使用zoom：1出发hasLayout。
+								4.使用before和afert双伪元素（在父元素上使用）
+								（小米）
+								.clearfix:before，.clearfix:after{
+								&emsp; content:"";
+								&emsp; display:table; //此句触发BFC
+								}
+								.clearfix:after{
+								&emsp; clear:both;
+								}
+								.clearfix{
+								&emsp; *zoom:1; //IE6-7专有
+								}
+								缺点：由于IE6-7不支持：after，使用zoom：1出发hasLayout。
+								定位：
+								隐藏模式转换：
+								固定定位和绝对定位可让元素默认转换为inline-block元素(行内元素加float则这个元素可直接设置宽高)。
+								注意！！！要设置宽高
+								z-index:
+								默认为0，数值相同后来居上，只有相对定位，决定定位，固定定位有此属性。
+								outline: none; 取消轮廓线input,textarea
+								浏览器默认样式不一样最好自己设定一个border。
+								textarea文本域防止拖拽
+								resize: none;
+								readonly 只读 用于公告
+								vertical-align特别针对行内块元素，控制图片表单文字对齐;
+								white-space:nowrap;
+								强制在同一行内显示所有文本，直到文本结束或者遇到br标签才换行。
+								text-overflow : clip | ellipsis
+								设置或检索是否使用一个省略标记（...）标示对象内文本的溢出
+								clip : 　不显示省略标记（...），而是简单的裁切
+								ellipsis : 　当对象内文本溢出时显示省略标记（...）
+								注意一定要首先强制一行内显示，再次和overflow属性 搭配使用
+
+							</p>
+						</li>
+						<li>
+							<h2>JS数据类型<span class="date"></span></h2>
+							<p class="list">
+								分为6类
+								number
+								number.toFixed(2) 保留两位小数
+								Number.MAX_VALUE 数字的最大值
+								注意！！！！不要用小数去验证小数，小数存放的精度有问题。
+								isNaN(num) 是数字返回false
+								+num//可把num从string转化为number
+								string
+								字符串的拼接
+								一个是字符串一个是数字 使用+号，则是拼接，不是相加
+								例如 var num1="12";
+								var num2=5;
+								var sum=num1+num2; 结果为125
+								一个是字符串一个是数字 使用-号，则是计算
+								例如 var num1="12";
+								var num2=5;
+								var sum=num1-num2; 结果为7
+								boolean true false
+								null 只能个人设置为null
+								underfined 声明变量未赋值。
+								object
+								isNaN()函数通常用于检测 parseFloat() 和 parseInt() 的结果，以判断它们表示的是否是合法的数字。当然也可以用 isNaN() 函数来检测算数错误，比如用 0 作除数的情况。
+
+								类型转换
+								parseInt(a);将a转为整数
+								a如果开头是非数字则结果为NaN
+								若数字开头后跟字符则结果为前数字段
+
+								a.toString();
+								将a转为字符串
+								String(a);
+								有意义的用.toString() 用String()报错
+								NaN与任何值都不相等，包括NaN本身。
+								null==undefined true
+								true == 2 false
+								undefined==0 false
+								null==0 false
+								"5"==5 true
+								全等操作符 === 它只在两个操作数未经转换就像等的情况下返回true
+								null===undefined false
+							</p>
+						</li>
+						<li>
+							<h2>JS函数<span class="date"></span></h2>
+							<p class="list">
+								1.arguments对象
+								arguments对象存在函数中代表着传入的数据。
+								arguments[0]代表第一个传入的参数
+								arguments.length可获取传入的参数的长度
+								2.函数调用
+								自调用:声明的同时直接调用，一次性。
+								(function(){
+								console.log("调用");
+								})();
+								函数作为参数，那就是回调函数。
+								函数可作为返回值。
+								3.函数作用域(函数适用范围)
+								块级作用域
+								一对大括号可以看做是一块，在这对大括号里定义的变量，只在这个区域的中使用，但是在js中在这个块级作用域中定义的变量的，外面也能用。
+								<em style="color: red; font-weight: bold;">由此，JS没有块级作用域，只有函数除外。</em>
+								局部变量
+								在函数内部定义的变量是局部变量，外部不能使用。
+								全局变量
+								除函数以外，其它的任何位置定义的变量都是全局变量。（如果页面不关闭，那么就不会释放，就会占空间，消耗内存）
+								隐式全局变量（声明的变量没有var，就叫隐式全局变量）
+								例如
+								function f1(){
+								num=10;
+								}
+								f1();
+								console.log(number);//此处为10
+								隐身全局变量可以被delete 删除。
+								全局变量不可被删除。
+							</p>
+						</li>
+						<li>
+							<h2>DOM<span class="date"></span></h2>
+							<p class="list">
+								阻止超链接默认跳转用return flase;
+								根据id属性的值获取元素,返回来的是一个元素对象
+								document.getElementById("id属性的值");
+
+								根据标签名字获取元素,返回来的是一个伪数组,里面保存了多个的DOM对象
+								document.getElementsByTagName("标签名字");
+
+								下面的几个,有的浏览器不支持
+
+								根据name属性的值获取元素,返回来的是一个伪数组,里面保存了多个的DOM对象
+								document.getElementsByName("name属性的值")
+								根据类样式的名字来获取元素,返回来的是一个伪数组,里面保存了多个的DOM对象
+								document.getElementsByClassName("类样式的名字")
+								根据选择器获取元素,返回来的是一个元素对象
+								document.querySelector("选择器的名字");
+
+								根据选择器获取元素,返回来的是一个伪数组,里面保存了多个的DOM对象
+								document.querySelectorAll("选择器的名字")
+
+								html标签中可以自己添加属性，用于记录数据
+								js调用getAttribute("your") 获取自定义属性的值
+								调用setAttribute("your",value) 设置自定义your属性
+								调用removeAttribute("your") 移除属性
+							</p>
+						</li>
+						<li>
+							<h2>BOM<span class="date"></span></h2>
+							<p class="list">
+								浏览器对象
+								location对象 地址栏
+								location.href="http://www.diudiudiu.com";属性
+								location.assign("http://www.diudiudiu.com"); 方法
+								设置跳转的页面
+
+								location.reload(); 重新加载 刷新
+								location.replace("http://www.diudiudiu.com"); 连接不记录历史记录无法后退
+
+								window.location.hash 地址栏上 锚链接#号后面的
+								window.location.host 主机名及端口号
+								window.location.hostname 主机名
+								window.location.pathname 文件路径 相对路径端口 没有域名
+								window.location.port 端口号
+								window.location.protocol 协议
+								window.location.search 搜索的内容 ？后 的内容
+
+							</p>
+						</li>
+						<li>
+							<h2>原型prototype与闭包<span class="date"></span></h2>
+							<p class="list">
+
+
+								原型作用：
+								1.数据共享节省空间
+								2.继承
+
+								构造函数.prototype={
+								constructor:构造函数
+								}
+								继承：
+								1.原型继承改变原型指向，属性被固定。
+
+								2.借用构造函数，无法继承方法。
+								父类构造函数.call(this,子类属性);
+								3.组合继承 构造函数+原型继承
+
+								4.拷贝继承
+								function f1(num1,num2){
+								console.log(num1+num2+this)
+								}
+								f1.apply(null)
+								f1.call(null)
+								apply和call方法中如果没有传入参数，或者是传入的是null,那么调用该方法的函数对象中的this就是默认的window
+								f1.apply(null,[100,200]);
+								f1.call(null,100,200);
+								apply和call都可以让函数或者方法来调用，传入参数和函数自己调用的写法不一样但是效果一样
+								f1.apply(obj,[100,200]);
+								f1.call(obj,100,200);
+								apply最多只能有两个参数——新this对象和一个数组argArray
+								call可以接受多个参数，第一个参数与apply一样，后面则是一串参数列表。
+								使用方法
+								函数名字.apply(对象,[参数1,参数2，...]);
+								方法名字.apply(对象,[参数1,参数2，...]);
+								函数名字.call(对象,参数1,参数2，...);
+								方法名字.call(对象,参数1,参数2，...);
+
+								作用：改变this指向
+								只要是想使用别的对象的方法，并希望这个方法是当前对象的，就可以使用apply或call方法改变this指向
+								
+								var f2=f1.bind(null);
+								复制函数f1给f2
+
+								闭包
+								闭包模式：函数模式闭包，对象模式闭包
+								闭包作用：缓存数据延长作用域链
+								优缺点：缓存数据
+
+
+
+
+
+
+							</p>
+						</li>
+						<li>
+							<h2>节点<span class="date"></span></h2>
+							<p class="list">
+								节点的属性:(可以使用标签--元素.出来,可以使用属性节点.出来,文本节点.点出来)
+								nodeType:节点的类型:1----标签,2---属性,3---文本
+								nodeName:节点的名字:标签节点---大写的标签名字,属性节点---小写的属性名字,文本节点----#text
+								nodeValue:节点的值:标签节点---null,属性节点---属性值,文本节点---文本内容
+
+								节点有关的函数
+								当前节点的父节点
+								a.parentNode();
+								当前节点的父元素
+								a.parentElement();
+								当前节点的子节点
+								a.childNodes();
+								当前节点的子元素
+								a.children();
+								当前节点的第一个子节点
+								a.firstChild();
+								当前节点的第一个子元素
+								a.firstElementChild();
+								当前节点的最后一个子节点
+								a.lastChild();
+								当前节点的最后一个子元素
+								a.lastElementChild();
+								当前节点的前一个兄弟节点
+								a.proviousSibling();
+								当前节点的前一个兄弟元素
+								a.proviousElementSibling();
+								当前节点的后一个兄弟节点
+								a.nextSibling();
+								当前节点的后一个兄弟元素
+								a.nextElementSibling();
+
+								第一个节点和第一个元素的获取在IE8中可能不支持
+								element.firstChild-->Chrome FireFox获取的是第一个子节点
+								element.firstChild-->IE8获取的是第一个子元素
+								element.firstElementChild--> Chrome FireFox获取的是第一个子元素 IE8 不支持
+								兼容代码
+								function getFirstElementChild(element){
+								&emsp; if(element.firstElementChild){
+								&emsp;&emsp; return element.firstElementChild;
+								&emsp;}else{
+								&emsp;&emsp;var node=element.firstChild;
+								&emsp;&emsp;while(node&&node.nodeType!=1){节点存在并且有意义
+								&emsp;&emsp;&emsp; node=node.nextSibling;
+								&emsp;&emsp;}
+								&emsp;&emsp;return node;
+								&emsp;}
+								}
+
+								创建元素的三种方式：
+								1.document.write(&lt;div&gt;aa&lt;/div&gt;);
+								缺陷：如果是在页面加载完毕后，通过这种方式创建元素，那么页面上存在的所有内容会被全部干掉。
+								2.innerHTML="&lt;div&gt;aaa&lt;/div&gt;"
+
+								3.document.createElement("div")
+								把元素追加到父级元素中
+								var odiv=document.createElement("div");
+								var a=document.getElementById('a')
+								a.appendChild(odiv);//追加
+								把新子元素插入到第一个子元素前面
+								a.insertBefore(odiv,getFirstElementChild(a));
+								用新子元素替换第一个子元素
+								a.replaceChild(odiv,getFirstElementChild(a));
+								移除父级元素的子元素
+								a.removeChild(getFirstElementChild(a));
+								事件监听document.getElementById('a');
+								为元素绑定事件
+								可为同一个元素绑定多个事件
+								a.addEventListener(事件类型，事件函数，布尔（false）);
+								Chrome FireFox IE11支持IE8不支持
+
+								attachEvent(on+事件类型，事件函数) IE8支持 IE11不支持
+								不同点 参数个数不同
+								this指向不同
+								addEventListener 是 当前绑定事件的对象
+								attachEvent 指向是 window
+								兼容代码：
+								function addEventListener(element,type,fn) {
+								//判断浏览器是否支持这个方法
+								if(element.addEventListener){
+								element.addEventListener(type,fn,false);
+								}else if(element.attachEvent){
+								element.attachEvent("on"+type,fn);
+								}else{
+								element["on"+type]=fn;
+								}
+								}
+								事件解绑
+								1.on事件名字=null
+								2.removeEventListener(事件类型，命名函数，布尔（false）);
+								detachEvent(on+事件类型，命名函数)
+								兼容代码：
+								//为任意的一个元素,解绑对应的事件
+								function removeEventListener(element,type,fnName) {
+								if(element.removeEventListener){
+								element.removeEventListener(type,fnName,false);
+								}else if(element.detachEvent){
+								element.detachEvent("on"+type,fnName);
+								}else{
+								element["on"+type]=null;
+								}
+								}
+								事件冒泡（从内向外）默认
+
+								事件捕获（从外向内）
+								阻止事件冒泡
+								window.event.cancelBubble=true; IE特有的 但谷歌也支持
+								e.stopPropagation();谷歌火狐都支持 IE不支持
+
+
+								通过e.enventPhase 可以知道当前事件是什么阶段
+								1--->捕获阶段
+								2--->目标阶段
+								3--->冒泡阶段
+							</p>
+						</li>
+						<li>
+							<h2>JS对象<span class="date"></span></h2>
+							<p class="list">
+								通过instanceof查询对象类型
+								1.工厂模式创建对象，一次创建多个对象。
+								把创建对象的代码封装进函数中，信息作为参数。
+								function creactobj(name,age){
+								var obj=new object();
+								obj.name=name;
+								obj.age=age;
+								obj.eat=function(){
+								console.log(this.name+"正在吃饭");
+								}
+								}
+
+								2.自定义构造函数创建对象
+								构造函数名字首字母大写
+								function Person(name,age){
+
+								this.name=name;
+								this.age=age;
+								this.eat=function(){
+								console.log(this.name+"正在吃饭");
+								}
+								}
+								3.字面量的方式创建对象
+								var obj={};
+								obj.name="小明";
+								obj.age=17;
+								obj.eat=function(){
+								console.log(this.name+"正在吃饭");
+								}
+
+								优化
+								var obj={
+								name:"小明",
+								age:17,
+								obj.eat:function(){
+								console.log(this.name+"正在吃饭")
+								}
+								};
+								缺陷：一次性的对象
+								4.JSON
+								for-in
+								for(var key in json){
+								//key 表示json对象中的属性的名字
+								json[key]表示key对应的value
+								}
+								5.内置对象
+								实例对象：通过构造函数创建出来，实例化的对象。
+								实例方法，必须通过实例对象调用
+								静态对象：不需要创建。直接就是一个对象。方法（静态方法）直接通过这个对象的名字调用。
+								静态方法，必须通过大写的对象调用。
+								Math
+								比较常用的属性
+								Math.E 数学中的底数
+								Math.PI 数学中的圆周率
+								常用方法
+								Math.abs(x) 绝对值 x=null 结果为0 其它类型为NaN
+								Math.ceil(x) 向上取整数
+								Math.floor(x) 向下取整数
+								Math.max(x,y,z) 取一堆数字中的最大值
+								Math.min(x,y,z) 取一堆数字中的最小值
+								Math.pow(x,y) x的y次幂
+								Math.sqrt(x) x的平方根
+								Math.random() 返回一个[0~1)内的随机数。
+								Date
+								需要实例对象。
+								var dt=new Date();
+								var dt=+new Date(); 特殊写法 若不支持H5浏览器则用该版本
+								常用方法
+								dt.getFullYear() 获取年份
+								dt.getMonth() 获取月 从0开始要+1
+								dt.getDate() 获取日
+								dt.getHours() 获取小时
+								dt.getMinutes() 获取分钟
+								dt.getSeconds() 获取秒
+								dt.getDay() 获取星期 从周日 0 开始
+								dt.toDateString() 英文格式日期
+								dt.toLocaleDateString() 数字格式
+								dt.toTimeString() 英文 小时分钟秒
+								dt.toLocaleTimeString() 数字格式 小时分钟秒
+								dt.valueOf() 毫秒数
+								String
+								字符串可以通过索引访问字符串中的某个值但是，是只读。
+								字符串值的改变是指向的堆改变了，不是值发生了改变。
+								实例方法
+								str.macth('正则表达式g') 返回匹配的数组
+								str.charAt(x) 返回指定位置的字符。超出为空
+								str.concat(str2,str3...) 与多个字符串进行拼接返回一个新的字符串
+								str.slice(x,y) 返回[x,y)的字符串
+								str.split("x",num) 返回以x切割的num个字符串数组num可省略
+								str.substr(x,y) 返回以x开始的y个字符串 y可省略
+								str.substring(x,y) 返回[x,y)的字符串
+								str.map(Number) 把str字符串转换为数字数组
+								substring()是以两个参数中较小一个作为起始位置，较大的参数作为结束位置。
+
+								slice()接收的参数是负数时，会将它字符串的长度与对应的负数相加，结果作为参数，也可理解为倒数。
+
+								substr()接收的参数是负数时，会将它字符串的长度与对应的负数相加，结果作为参数，也可理解为倒数。
+
+								substring()则干脆将负参数都直接转换为0。
+
+								str.indexOf(st，y) 在str字符串中从y找字符串st并返回其索引 y可省略
+								str.lastIndexOf(st，y) 从后往前找
+								str.toLocaleLowerCase() 字符串变小写
+								str.toLowerCase() 字符串变小写
+								str.toLocaleUpperCase() 字符串变大写
+								str.toUpperCase() 字符串变大写
+								str.trim() 清除字符串两端的空格
+								案例：统计字符串字母出现的个数 扩展（英语词典）
+								var str="abcdeqwaszxafffgkljp"
+								str=str.toLocaleLowerCase();
+								var obj={};
+								for(var i=0;i&lt;str.length;i++){
+								var key = str[i]; // 每个字母
+								if(obj[key]){
+								//是否存在这个键
+								obj[key]++;
+								}else{
+								obj[key]=1;
+								}
+								}
+
+								支持正则表达式
+								str.replace("a","b") 将a替换为b
+								静态方法
+								String.fromCharCode(数字值，可以是多个) 返回ASCII对应的字符串
+								字符串反转 没有特定的方法 要先每个字符拆分成数组 再用数组的方式进行反转再组合
+								Array
+								静态方法
+								Array.isArray(x) x是否是数组
+								实例方法
+								arr.concat(str2,str3...) 与多个数组进行拼接返回一个新的数组
+								arr.every(function(a,b){
+								a 元素的值
+								b 索引的值
+								return a&gt;2000;
+								}); 数组中的每个数字是否全部大于2000
+
+								arr.filter(function(a,b){
+								a 元素的值
+								b 索引的值
+								return a&gt;2000;
+								}); 返回数组中的数字大于2000的子数组
+								arr.push(x) arr数组追加x,返回长度
+								arr.pop() 删除最后一个，返回删除元素的值
+								arr.shift() 删除第一个，返回删除元素的值
+								arr.unshift(x) arr数组第一个元素前插入x，返回长度
+								arr.forEach(callback) 遍历数组
+								arr.indexOf(x) 在arr数组中找x并返回其索引
+								arr.lastIndexOf(x) 从后往前找
+								arr.join("|") 数组转字符串 每项中间加|
+								arr.map(callback) 返回arr执行过callback函数的结果数组
+								arr.reverse() 反转
+								arr.sort(function(a,b){
+								if(a&gt;b){
+								return 1;
+								}else if(a==b){
+								return 0;
+								}else{
+								return -1;
+								}
+								}) 排序按function的规则
+								arr.slice(x,y) 返回[x,y)的数组
+								arr.(开始的位置，要删除的个数，替换的元素的值) 一般用于删除数组中的元素 或者替换元素，或者插入元素
+								Object
+							
+
+								如果是对象&&true true&&对象
+								结果就是后方的 true 对象
+							</p>
+						</li>
+						<li>
+							<h2>正则表达式<span class="date"></span></h2>
+							<p class="list">
+								正则表达式用于验证或查找信息，在JS走应用广泛，JS有专门的类和对象。
+								在 JavaScript 中，正则表达式通常用于两个字符串方法 : search() 和 replace()。
+								search() 方法 用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串，并返回子串的起始位置。
+								replace() 方法 用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。
+								var reg = /pattern/flags // 字面量创建方式
+								var reg = new RegExp(pattern,flags); //实例创建方式
+								reg.test(str);//验证字符串是否匹配
+								匹配中文[\u4e00-\u9fa5]
+
+								pattern:正则表达式
+								flags:标识(修饰符)
+								标识主要包括：
+								1. i 忽略大小写匹配
+								2. m 多行匹配，即在到达一行文本末尾时还会继续寻常下一行中是否与正则匹配的项
+								3. g 全局匹配 模式应用于所有字符串，而非在找到第一个匹配项时停止
+								ES6
+								4.u 字符 不再针对码元
+								5.y 粘性 与lastIndex属性有关
+								通常\小写字母与\大写字母互为相反含义便于记忆
+
+								. 表示除/n以外的任何字符
+								[a-z] a-z任意一个字母
+								[] 把正则表达式中元字符意义干掉 如[.]就是一个.
+								x|y 匹配x或y 优先级最低
+								() 改变优先级 分组
+								{n} n次
+								{n,m} 前面的表达式出现了n-m次
+								{n,} 前面的表达式出现了n次以上
+								* 前面的表达式出现了0次或多次
+								+ 前面的表达式出现了1次或多次
+								? 前面的表达式出现了0次或1次 中止贪婪模式
+								\ 做为转意，
+								
+
+
+
+								(x) 匹配x 用$进行反向提取
+
+								严格模式！！！！！
+
+								^[0-9][a-z]$ 严格模式 0a
+								[xyz] 字符集(character set)，匹配这个集合中的任一一个字符(或元字符)
+								[^xyz] 不匹配这个集合中的任何一个字符
+								[\b] 匹配一个退格符
+								
+								\cX 这儿，X是一个控制符，/\cM/匹配Ctrl-M
+								\d 匹配一个字数字符，/\d/ = /[0-9]/
+								\D 匹配一个非字数字符，/\D/ = /[^0-9]/
+								\n 匹配一个换行符
+								\r 匹配一个回车符
+								\s 匹配一个空白字符，包括\n,\r,\f,\t,\v等
+								\S 匹配一个非空白字符，等于/[^\n\f\r\t\v]/
+								\t 匹配一个制表符
+								\v 匹配一个重直制表符
+								\w 匹配一个字母数字下划线，如[\w]匹配"$5.98"中的5，等于[a-zA-Z0-9_]
+								\W 匹配一个不可以组成单词的字符，如[\W]匹配"$5.98"中的$，等于[^a-zA-Z0-9_]。
+
+
+							</p>
+						</li>
+						<li>
+							<h2>ES6语法<span class="date"></span></h2>
+							<p class="list">
+								常量
+								ES5中的写法
+								Object.defineProperty(window,"PI2",{
+								value:3.1415926,
+								writeable:flase //不能写 （只读）
+								})
+								ES6
+								const PI = 3.1415926
+								const声明的时候就需要初始化赋值
+								const 是块级声明
+								const声明的变量不可重复声明
+								const声明会阻止对于变量绑定与变量自身值的修改，这并不会阻止对变量成员的修改(声明对象）。
+								例如：
+								const person={
+								name:"aaa"
+								}
+								person.name="Grey";//不会报错
+								person={
+								name:"Grey"
+								}
+								const阻止对变量绑定的修改，不会阻止对变量成员的修改
+								let表示块级声明
+								let声明不会提升到当前代码块的顶部
+								let声明的变量不可重复声明
+								let和const都不会提升声明
+								使用 let和const 声明的变量，若试图在定义位置之前使用它，都不能避免暂时性死区（TDZ）
+								---------------------------------------------------
+								作用域
+								ES5中
+								var callbacks=[]
+								for(var i=0;i<=2;i++){ callbacks[i]=function(){ return i*2; } } console.table{[ callbacks[0](), 6
+									callbacks[1](), 6 callbacks[2](), 6 ]} ES6中 const callbacks2=[] for(let j=0;j<=2;j++){
+									callbacks2[j]=function(){ return j*2; } } console.table{[ callbacks2[0](), 0 callbacks2[1](), 2
+									callbacks2[2](), 4 ]} ES5中需要用立即执行函数（IIFEs） ES6中每一个{}都表示一个块级作用域
+									--------------------------------------------------- 函数 ES5 function a(){ } ES6 (参数)=>{返回值}
+									如果只有一个参数切{}中只有一个返回值语句可写为v=>v+1
+									---------------------------------------------------
+									this指向
+									ES5
+									var factory = function(){
+									this.a='a';
+									this.b='b';
+									this.c={
+									a:'a+',
+									b:function (){
+									return this.a;
+									}
+									}
+									}
+									console.log(new factory().c.b) //a+
+									this指向的是函数调用者
+									ES6
+									var factory = function(){
+									this.a='a';
+									this.b='b';
+									this.c={
+									a:'a+',
+									b:()=> {
+									return this.a;
+									}
+									}
+									}
+									console.log(new factory().c.b) //a+
+									this指向的是定义时this指向
+									---------------------------------------------------
+									默认参数
+									ES5
+									function a(x,y,z){
+									if(x===undefined){
+									checkParameter()
+									}
+									y=y||2;
+									z=z||3'
+									}
+									ES6
+									function a(x=checkParameter(),y=2,z=2){
+
+									}
+									function checkParameter(){
+									throw new Error('cant\'t be empty');
+									}
+									---------------------------------------------------
+									可变参数
+									ES5
+									function f(){
+									var a=Array.prototype.slice.call(arguments);
+									var sum=0;
+									a.forEach(function(item){
+									sum+=item*1;
+									})
+									return sum;
+									}
+									ES6
+									...扩展运算符
+									function f(...a){
+									var sum=0;
+									a.forEach(item=>{
+									sum+=item*1;
+									})
+									return sum;
+									}
+									---------------------------------------------------
+									合并数组
+									ES5
+									var a=['asd',true,7];
+									var b=[1,2].concat(params);
+									ES6
+									利用扩展运算符
+									var a=['asd',true,7];
+									var b=[
+									1,2,...a
+									];
+									---------------------------------------------------
+									数据保护
+									ES3
+									闭包
+									var Person=function(){
+									var data={
+									name:'es3',
+									sex:'male',
+									age:15
+									}
+									this.get=function(key){
+									return data[key];
+									}
+									this.set=function(key){
+									if(key!=='sex'){
+									data[key]=value
+									}
+									}
+									}
+									ES5
+									definePropert属性
+									var Person={
+									name:'es3',
+									age:15
+									}
+									Object.definePropert(Person,'sex',{
+									writeable:false,
+									value:'male'
+									})
+									ES6
+									对象代理
+									let Person={
+									name:'es3',
+									sex:'male',
+									age:15
+									};
+
+									let person= new Proxy(Person,{
+									get(target,key){
+									return target[key]
+									}
+									set(target,key,value){
+									if(key!=='sex'){
+									target[key]=value
+									}
+									}
+									})
+									---------------------------------------------------
+									复制正则表达式
+									ES5
+									var re1=/ab/i
+									re2=new RegExp(rel)
+									ES6中 可以传入第二个参数 覆盖原来的标志
+									re2=new RegExp(rel，“g”)
+									re.source //"ab"
+									re.flags //"g"
+							</p>
+						</li>
+						<li>
+							<h2>Canvas<span class="date"></span></h2>
+							<p class="list">
+								Canvas是HTML5新元素用于绘制图画，默认大小为300*150；如果设置大小需要在Canvas的标签中设置height、width，Canvas标签内的内容只在浏览器不支持canvas的时候显示。开始绘画时，首先要获取到Canvas的标签的id，通过getContext()函数设置其2D
+								or 3D 效果。<br>
+								<em>html结构</em>
+								&lt;canvas id="canvas" width="1024" height="768"&gt;
+								&nbsp;&nbsp;&nbsp;&nbsp;当前浏览器不支持canvas，请更换浏览器。
+								&lt;/canvas&gt;
+								<em>JS代码</em>
+								var canvas=document.getElementById('canvas');
+								var context=canvas.getContext('2d');//绘图上下文环境。
+								这里有个坑Canvas是基于!!!状态!!!来绘制。
+								函数context.moveTo(x0,y0);表示画笔的起始点(x0,y0);
+								context.lineTo(x1,y2);表示从上个点画到(x1,y1)的直线。
+								context.lineWidth=number；表示线条轮廓的宽度。
+								context.stroke()；表示状态描述结束开始绘画。
+								context.strokeStyle="color";表示设置线条的颜色
+								context.beginPath();表示声明新的状态描述。
+								context.closePath();表示将首尾的点进行连接。
+								context.fillStyle='color';表示设置填充颜色。
+								context.fill()；进行填充。
+								context.rect(x,y,width,height);绘制矩形
+								<em style="color: red; font-weight: bold;">注意！</em>如果先进行绘画再进行颜色填充那么
+								假如线条宽度为10，则线条最终的宽度会变为5;原因在于线条宽度的10分为内部的5和外部的5，先绘制再填充则把内部的5给覆盖了。
+								context.beiginPath();
+								context.lineto(x,y);
+								等价于context.moveTo(x,y);
+							</p>
+						</li>
+						<li>
+							<h2>JS各种宽高的集合<span class="date"></span></h2>
+							<p class="list">
+								网页可见区域宽： document.body.clientWidth
+								网页可见区域高： document.body.clientHeight
+								网页可见区域宽： document.body.offsetWidth (包括边线的宽)
+								网页可见区域高： document.body.offsetHeight (包括边线的高)
+								网页正文全文宽： document.body.scrollWidth
+								网页正文全文高： document.body.scrollHeight
+								网页被卷去的高： document.body.scrollTop
+								网页被卷去的左： document.body.scrollLeft
+								网页正文部分上： window.screenTop
+								网页正文部分左： window.screenLeft
+								屏幕分辨率的高： window.screen.height
+								屏幕分辨率的宽： window.screen.width
+								屏幕可用工作区高度： window.screen.availHeight
+								屏幕可用工作区宽度： window.screen.availWidth
+								浏览器被卷去的高度： window.pageYOffset||document.body.scrollTop||document.documentElement.scrollTop;
+								浏览器被卷去的宽度： window.pageXOffset||document.body.scrollLeft||document.documentElement.scrollLeft;
+							</p>
+						</li>
+						<li>
+							<h2>CSS hack<span class="date"></span></h2>
+							<p class="list">
+								(1)IE条件注释法，即在正常代码之外添加判别IE浏览器或对应版本的条件注释，符合条件的浏览器或者版本号才回执行里边的代码。
+								(2)CSS属性前缀法，即是给css的属性添加前缀。比如 * 可以被IE6/IE7识别，但 _ 只能被IE6识别，IE6-IE10都可以识别 "\9"，IE6不能识别!important FireFox不能识别 * _  \9
+								“-″减号是IE6专有的hack
+								“\9″ IE6/IE7/IE8/IE9/IE10都生效
+								“\0″ IE8/IE9/IE10都生效，是IE8/9/10的hack
+								“\9\0″ 只对IE9/IE10生效，是IE9/10的hack
+								(3)选择器前缀法，顾名思义，就是给选择器加上前缀。
+								@media screen\9{...}只对IE6/7生效
+								@media \0screen {body { background: red; }}只对IE8有效
+								@media \0screen\,screen\9{body { background: blue; }}只对IE6/7/8有效
+								@media screen\0 {body { background: green; }} 只对IE8/9/10有效
+								@media screen and (min-width:0\0) {body { background: gray; }} 只对IE9/10有效
+								@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {body { background: orange; }} 只对IE10有效 等等
+							</p>
+						</li>
+						
+						<li>
+							<h2>库&工具<span class="date"></span></h2>
+							<p class="list">
+								Nprogress加载进度条库
+								<a href="https://icons8.com/preloaders/en/free" class="link">preloaders加载动画</a>
+								postman 接口的验证工具
+								<a href="http://www.fontawesome.com.cn/faicons/" class="link">font awesome字体图标库</a>
+								<a href="https://www.iconfont.cn/" class="link">Alibaba字体图标</a>
+								<a href="https://www.icomoon.io/" class="link">icomoon字体图标</a>
+								fullpage.js JQuery全屏切换的插件
+
+								<span id="html5shiv">html5shiv.js</span> h5兼容插件 必须引入在头部（在页面结构之前）
+								需要优化处理：条件注释
+								固定语法 lt小于 gt 大于lte小于等于 gte大于等于
+								&lt;!--[if lt IE9]>
+								&lt;script>&lt;/script>
+								&lt;![endif]-->>
+
+								stellar.js JQuery视察滚动效果插件(data-stellar-background-ratio="0.5" 按正常滚动速率的0.5倍滚动)
+							</p>
+						</li>
+						<li>
+							<h2>AJAX<span class="date"></span></h2>
+							<p class="list">
+								发送请求
+								var xhr = new XMLHttpRequest()
+								状态0 初始化请求代理对象
+								xhr.open('POST','./time.php') //设置请求行
+								状态1 建立一个与服务端特定的端口的连接
+								xhr.setResquestHeader('Foo','Bar')//设置一个请求头
+								一旦请求体是urlencoded格式的内容，一定要设置请求头中content-Type application/xwww-form-urlencoded
+								xhr.setResquestHeader('content-Type','application/xwww-form-urlencoded')//设置一个请求头
+								GET请求 send函数中一般传入null
+								POST 请求 传入 数据 可写为
+								xhr.send('key1='+value1+'&key2='+value2)//以 urlencoded格式设置请求体
+								xhr.send('key1=value1&key2=value2')//以 urlencoded格式设置请求体
+								接收响应
+								xhr.addEventListener('readystatechange',function(){
+								this.response 获取到的结果会根据this.responseType的变化而变化
+								this.responseText 永远获取的是字符串形式的响应体
+								switch(this.readyState){
+								case 2:
+								状态2 已经接受到了响应报文的响应头
+								console.log(this.getAllResponseHeaders())
+								this.getAllResponseHeaders().split('\n')换行分割
+								this.getResponseHeader('date') 获取指定键
+								console.log(this.readyState)
+								break;
+								case 3:
+								状态3 正在下载响应报文的响应体，有可能不完整，也有可能为空
+								console.log(this.readyState)
+								break;
+								case 4:
+								状态4 响应体下载完成
+								console.log(this.responseText)
+								console.log(this.readyState)
+								break;
+								}
+								})
+
+								xhr.onload等价于 this.readyState=4
+								是html5中XMLHttpResquest version 2.0 提供的
+								xhr.onreadystatechange=function(){
+								这个事件不是只在响应时出发 状态改变就触发
+								if（this.readyState!==4）return
+								console.log(this.responseText)
+								this.responseText响应体
+								状态3 初始化请求代理对象
+								状态4 初始化请求代理对象
+
+								}
+
+								同步与异步
+								xhr.open('POST','./time.php'，async)
+								open方法第三个参数是async 可以传入一个布尔值，默认为true
+								同步表示同一时间只能工作一件事情，执行Ajax时会有堵塞
+								异步表示同一时间能工作多件事情
+								区别在于send方法会不会出现等待状况
+
+								响应数据格式
+								服务端应该 设置一个合理的Content-Type
+								1.XML(out了)
+								this.responseXML 专门用于获取服务器端返回的XML数据，操作方式就是通过DOM的方式操作
+								但是需要服务器端响应头中的Content-Type 必须是 application/xml
+								2.JSON
+								使用JSON.parse进行转换
+
+								模版引擎
+								art-template
+								1.选择一个模版引擎
+								2.下载模版引擎JS文件
+								3.引入到页面中
+								4.准备一个模版
+								5.准备一个数据
+								6.通过模版引擎的JS提供的一个函数将模版和数据整合得到渲染结果HTML
+								7.将渲染结构的HTML 设置到默认元素的innerHTML中
+								模版最好写在script标签中
+								例如：
+								&lt;script id="tmpl" type="text/x-art-template">
+								{{each comments(模版名)}}
+								each 内部 $value 拿到的是当前被遍历的那个元素
+								$index拿到的是下标
+								&lt;tr>
+								&lt;td>{{}}&lt;/td>
+								&lt;td>{{}}&lt;/td>
+								&lt;td>{{}}&lt;/td>
+								&lt;/tr>
+								{{/each}}
+								&lt;/script>
+								type="text/x-模版名
+								var context={comments(模版设置的名字): 请求的数据}
+								var html=template('tmpl'(script标签的ID),context)
+
+								跨域
+								同源 是指域名，协议，端口完全相同，
+								只有同源的地址才可以相互通过AJAX的方式请求
+								不同源的地址默认不能发送AJAX的方式请求（请求已经发出，结果无法接收）
+								不同源的地址之间的请求 称之为跨域
+								跨域借用script标签
+								1.可以发送不同源地址之间的请求
+								2.无法拿到结果
+								3.借助于能够作为JS执行
+								4.需要服务端返回的是JS语句 header(需要改写为js)
+								5.script中有执行函数
+
+								AJAX跨域 CORS 跨域资源共享
+								Cross Origin Resource Share
+								在服务端添加 header('Access-Control-Allow-Origin: *')
+
+								兼容 ie5/6 var xhr = window.XMLRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP')
+							</p>
+						</li>
+						<li>
+							<h2>jsonp<span class="date"></span></h2>
+							<p class="list">
+								jsonp通过script标签请求一个服务端文件
+								这个文件返回的结果是一段JS
+								作用是调用我们事先定义好的一个函数
+								从而将服务端想要给客户端发过去的数据发送给客户端
+								function jsonp(url , params , callback){
+								var funcName='jsonp' + Date.now() + Math.random().toString().substr(2,5)
+
+								if(typeof params === 'object' ){
+								var tempArr=[]
+								for(var key in params){
+								var value =params[key]
+								tempArr.push(key +'='+value)
+								}
+								params=tempArr.join('&')
+								}
+								var script =document.createElement('script')
+								script.src = url + '?' +params + '&callback='+funcName
+								document.body.appendChild(script);
+								window[funcName]=function(data){
+								callback(data)
+								delete window[funcName]
+								document.body.removeChild(script);
+
+								}
+								}
+							</p>
+						</li>
+						<li>
+							<h2>Vue.js<span class="date"></span></h2>
+							<p class="list">
+								&lt;p v-cloak&gt;{{msg}}&lt;/p&gt;
+								v-cloak:能够解决插值表达式闪烁的问题需要在style标签设置[v-cloak]display:none;html标签会转义不会让浏览器解析。
+								&lt;p v-text="msg"&gt;&lt;/p&gt;
+								v-text:默认没有闪烁问题 会覆盖元素中原本的内容。插值表达式不会覆盖只会插入。html标签会转义不会让浏览器解析。
+								&lt;p v-html="msg"&gt;&lt;/p&gt;
+								v-html：覆盖内容 并解析msg中的标签
+								&lt;p v-bind:title="mytitle + '123'"&gt;&lt;/p&gt;
+								v-bind:title简写为:title
+								v-bind: 是Vue中提供用于绑定属性的指令,绑定后会将属性的内容当作JS表达式。
+								&lt;p v-on:click="show"&gt;&lt;/p&gt;
+								v-on:click简写为@click
+								v-on: 是Vue中提供用于绑定事件的指令
+								事件修饰符
+								@click.stop 阻止冒泡
+								@click.prevent 阻止默认行为
+								@click.capture 改为捕获事件
+								@click.self 只有触发当前元素才触发
+								self 只会组织自己身上的冒泡行为的触发
+								@click.once 只触发一次
+								&lt;input type="text" v-model="msg">
+								v-model可以实现表单和和Model中数据的双向绑定，只能运用在表单元素中
+								&lt;p v-for="(val,key) in user" &gt; 值是{{ val  }}---键是：{{ key }}&lt;/p&gt;
+								v-for循环时候，key属性只能用number或string，key在使用的时候，必须使用v-bind属性绑定指定key的值
+								&lt;p v-if="flag" &gt;asdasd&lt;/p&gt;
+								&lt;p v-show="flag" &gt;asdasd&lt;/p&gt;
+								v-if：当隐藏的时候 是类似注释一样,移除元素，有较高的切换性能消耗，如果元素涉及到频繁的切换，最好不要使用。
+								v-show:隐藏是 display：none，有初较高的初始渲染消耗，如果元素可能永远不被显示给用户看到，则不要使用该属性。
+								在Vue中自定义属性要以v-开头
+								使用Vue.directive()定义全局指令
+								参数1指令名称，定义的时候不需要加v-在调用的时候加上，
+								参数二：是一个对象，身上有一些指令相关的函数，这些函数可以在特定的阶段执行相关的操作。
+
+								Vue.directive('focus',{
+								//在每个函数中 第一个参数永远是el，表示被绑定的元素，是个原生的JS对象。
+								//binding对象
+								//属性: name 指令名字
+								//属性: value 绑定指令计算后的值
+								//属性: expression 绑定指令后的字符串表达式
+
+								bind:function(el){
+								//每当指令绑定到元素上时候，会立即执行函数，只执行一次
+								//元素刚绑定的时候还没有插入DOM中去，这时调用focus无效果
+								//el.focus();
+								//样式相关的写在bind中
+								},
+								inserted:function(el){
+								//元素插入DOM中的时候，会执行该函数，可执行多次
+								el.focus();
+								//js行为写在inserted。
+								},
+								updated:function(){
+								//VNode更新的时候执行，可执行多次
+								}
+								})
+								简写
+								//当只想在bind和update时候操作可进行简写
+								Vue.directive('color',function(el,binding){
+								el.style.color=binding.value;
+								})
+
+								
+								过滤器
+								定义：
+								Vue.filter('过滤器的名称'，function(){})
+								调用
+								{{ name | 过滤器的名称 }}
+								//当私有过滤器和全局过滤器重名，那么采用就近原则，调用私有过滤器。
+
+								vue实现数据请求 vue-resource（get post jsonp） (axios也可以)
+								Vue.http.options.root='http://vue.studyit.io/';
+								//如果我们通过全局配置了，请求的数据接口 根域名，则在每次单独发起http请求的时候，请求的url路径，
+								应当以相对路径开头，前面不能带/，否则不会启用根路径做拼接
+								-----动画------
+								transition元素是Vue官方提供的
+								将动画的dom节点放在transition标签中
+
+								&lt;transition>
+								&lt;h3 v-if="flag">这是一个H3&lt;/h3>
+
+								&lt;/transition>
+								style标签中设置：
+								/*两组样式控制 transition 内部动画*/
+								/*v-enter是进入起始状态*/
+								/*v-leave-to 离开之后 动画结束状态*/
+								.v-enter,
+								.v-leave-to{
+								opacity: 0;
+								transform: translateX(150px);
+								}
+								/*v-enter-active入场动画时间段*/
+								/*v-leave-active离场动画时间段*/
+								.v-enter-active,
+								.v-leave-active{
+								transition: all 0.4s ease;
+								}
+
+
+
+								------transitionGroup------
+								在实现列表过度的时候，如果需要过度的元素是通过v-for循环渲染出来的，
+								不能使用 transition 包裹，需要使用transitionGroup
+								&lt;transition-group appear>
+								&lt;h3 v-if="flag">这是一个H3&lt;/h3>
+
+								&lt;/transition-group>
+								.v-move 和 .v-leave-active 配合使用，
+								能够实现列表后续元素渐渐的上飘。
+								也可自定义动画，在transition元素 设置 name属性，然后 在style标签中名字为.my-代替.v-
+
+
+								appear 属性加上时，可实现页面刚展示入场效果
+								tag属性可为transitionGroup渲染时候设置标签种类默认为span标签
+
+
+
+
+								使用第三方animate.css
+								&lt;transition enter-active-class="animated bounceIn" leave-active-class="animated bounceOut"
+								:duration="{enter:200,leave:400}">
+								&lt;h3 v-if="flag">这是一个H3&lt;/h3>
+
+								&lt;/transition>
+								bounceIn,bounceOut可以选择不同的效果
+								animated 可放在元素身上
+								&lt;h3 v-if="flag" class="animated">这是一个H3&lt;/h3>
+								duration 设置入场时间离场时间
+
+								动画钩子函数
+								
+								.v-move{
+									transition: all 0.6s ease;
+								}
+								.v-leave-actice{
+									position: absolute;
+								}
+
+								&lt;transition
+								@before-enter="beforeEnter"
+								@enter="enter"
+								@after-enter="afterEnter">
+								&lt;div class="ball" v-show="flag">&lt;/div>
+								&lt;/transition>
+								methods:{
+								// 动画钩子函数的第一个参数 表示要执行的DOM元素 是个原生js对象
+								beforeEnter(el){
+								// 表示动画入场之前，可以在该函数中 设置 动画开始之前的起始样式
+								el.style.transform="translate(0,0)";
+								},
+								enter(el,done){
+								// 表示动画开始之后的样式，可以在该函数中设置结束状态。
+								el.offsetWidth;
+								// 这句话无作用，但是不写动画出不来
+								el.style.transform="translate(150px,450px)";
+								el.style.transition="all 2s ease";
+								done();
+								// 是afterEnter函数引用
+								},
+								afterEnter(el){
+								// 动画完成之后执行该函数。
+								// console.log('ok');
+								this.flag=!this.flag;
+
+								}
+								}
+
+
+								var vm=new vue({
+								//在vm实例中想要获取data上的数据或者methods中的方法必须通过this调用
+								//vm实例会监听自己data中所有数据的改变，只要数据一发生变化就会自动吧最新数据从data上同步到页面中
+								el:'#app',
+								data:{
+								msg:'123',
+								mytitle:'&lth1>1234567&lt/h1>',
+								user:{
+								id:1,
+								name: 'tony',
+								gender:'男'
+								}
+								},
+								methods:{
+								//这个中定义了当前Vue中所有可用的方法
+								show:function(){
+								alert('a')
+								}
+								//ES6写法
+								show(){
+								alert('a')
+								},
+								lang(){
+								//定时器ID应该设置在data中
+								setInterval( () => {
+								//this指向改变了
+								}，400)
+								}
+								},
+								filters: {
+								//私有过滤器
+								dateFormat：function (dateStr,pattern="yyyy-mm-dd") {
+								var dt=new Date(dateStr);
+								var y=dt.getFullYear();
+								var m=(dt.getMonth()+1).toString().padStart(2,'0');
+								var d=dt.getDate().toString().padStart(2,'0');
+
+								if (pattern&&pattern.toLowerCase()==='yyyy-mm-dd') {
+								// return y+ '-'+m+'-'+d;
+								return `${y}-${m}-${d}`;
+
+								}else{
+								var hh=dt.getHours().toString().padStart(2,'0');
+								var mm=dt.getMinutes().toString().padStart(2,'0');
+								var ss=dt.getSeconds().toString().padStart(2,'0');
+								return `${y}-${m}-${d}-${hh}-${mm}-${ss}`;
+
+
+								}
+								// 字符串模版
+								// return `${y}-${m}-${d}`;
+								}
+								}，
+								directives:{
+								//自定义私有指令
+								'focus':{
+								bind:function(el,binding){
+
+								}
+								}
+								}
+								})
+							</p>
+						</li>
+						<li>
+							<h2>Vue.js组件<span class="date"></span></h2>
+							<p class="list">
+								&lt;my-com1>&lt;/my-com1>
+								// 全局组件！！！！！！！！
+								//使用Vue.extend 来创建全局的Vue组件
+								var com1=Vue.extend({
+								template:'<h3>Vue.extend组件化</h3>',
+								// 通过 template 属性，指定了组件要展示的HTML结构
+								});
+								// 使用 Vue.component('组件的名称',创建出来的组件模版对象);
+								Vue.component('myCom1',com1);
+								Vue.component('myCom3',{
+								template:'<h3>字面量组件化</h3>'
+								// 通过 template 属性，指定了组件要展示的HTML结构
+								});
+
+
+
+								&lt;template id="tmp1">
+								&lt;div>
+								&lt;h2>外部定义结构方便，代码提示&lt;/h2>
+								&lt;/div>
+								&lt;/template>
+								Vue.component('myCom4',{
+								template:'#tmp1',
+								// 通过id
+								});
+								&lt;my-com5>&lt;/my-com5>
+
+								Vue.component('myCom5',{
+								template:'&lt;h3>{{msg}}&lt;/h3>',
+								// 通过id
+								data:function(){
+								return{
+								msg:'aaaaa',
+								}
+								}
+								});
+							</p>
+						</li>
+						<li>
+							<h2>Vue生命周期<span class="date"></span></h2>
+							<p class="list">
+								Vue共八个声明周期
+								new Vue()=>Init Events&Lifecycle(实例初始化)
+								①==beforeCreate在实例初始化之后，数据观测 和 事件配置之前被调用==>Init injections & reactivity 进行事件初始化，数据观测
+								②==created在实例创建完成后被立即调用。在这一步实例完成以下配置：数据观测(data observer),属性和方法的运算，watch/event事件回调==>判断对象是否有el选项
+								if(没有){
+								停止编译，停止生命周期，直到该vue实例上调用vm.$mount(el)
+								}else{
+								判断是否有template参数，该参数有无对生命周期无影响
+								if(有template){
+								将其作为模版编译成render函数
+								}
+								else{
+								将外部HTML作为模版编译
+								}
+								}
+								★★模版优先级★★
+								★★render函数选项>template选项>outer HTML★★
+								③==beforeMount在挂载开始之前被调用：相关的render函数首次被调用。此处还未能获取DOM。该钩子在服务器端渲染期间不被调用==>Create vm.$el and replace
+								'el'with it 给vue实例对象添加$el成员，并且替换掉挂载的DOM元素
+								④==mounted el被新创建vm.$el替换，并挂载到实例上去之后调用该钩子。该钩子服务器端渲染期间不被调用==>Mounted=>when data changes
+								⑤==beforeUpdata数据发生在虚拟DOM打补丁之前。该钩子在该钩子服务器端渲染期间不被调用，因为只有初次渲染会在服务端进行==>Virtual DOM re-render and patch
+								当vue发现data中的数据发生了改变，就会触发对应组件的重新渲染打补丁
+								⑥==updated由于数据更改导致的虚拟DOM重新渲染和打补丁，在这之后会调用该钩子。该钩子在该钩子服务器端渲染期间不被调用==>when vm.$destroy() is called
+								当显示调用destory()函数销毁组件或关闭页面，组件开始执行销毁程序。
+								⑦==beforeDestroy实例销毁之前调用，在这一步实例仍然完全可用==>Teardown watchers,child components and event listeners
+								解绑实例指示的所有东西包括监听器，实例，事件。
+								⑧==destoryed Vue实例销毁后调用。调用后，Vue实例指示的所有东西都会解绑，所有的事件监听器会被移除，所有的子实例也会被销毁。该钩子在该钩子服务器端渲染期间不被调用。==>Destoryed
+
+							</p>
+						</li>
+						<li>
+							<h2>Vue父子组件<span class="date"></span></h2>
+							<p class="list">
+								父组件用绑定属性的方法 传入 数据 或者方法
+								子组件用props[] 接收数据 用 this.$emit('绑定的方法名字',参数)
+
+								
+								父组件调用子组件数据 在子组件身上绑定ref属性 通过this.$ref.属性名字 调用
+
+								
+							</p>
+						</li>
+						<li>
+							<h2>路由<span class="date"></span></h2>
+							<p class="list">
+								路由传参
+								&lt;router-link to:"/login?id=10">&lt;/router-link>
+								&lt;router-link to:"/login?:12">&lt;/router-link>
+								this.$route.params.id
+								this.$route.query.id
+								路由嵌套 children 属性
+							</p>
+						</li>
+						<li>
+							<h2>关于JS冷知识<span class="date"></span></h2>
+							<p class="list">
+								1.html标签定义了id，就可以在js中（浏览器环境）直接通过id引用这个dom元素。
+								原因：如果dom元素的id名称不和js内置属性或全局变量重名的话，
+								该名称自动成为window对象的属性，所以可以直接用来操作dom。
+								（未形成标准，最好用规范写法）
+								2.JS中的计时器
+								console.time('abc') 传入一个字符串 为计时器的名字
+								console.timeEnd('abc') 结束定时器
+								3.浏览器console.log
+								打印对象时，内容是折叠的，若后续内容改变，当点开的折叠内容，获取的是改变后的内容。
+								何时点开折叠内容 ，获取的就是当时的值
+								4.link标签：
+								真正的意义链入一个文档，通过rel属性 申明链入的文档与当前文档之间的关系。并不是只为了链入CSS文件
+								5.js动画与css3动画的区别
+								一个是帧动画（使用定时器每隔一段时间 更改当前元素的状态）不适合
+								一个是补间动画 （过渡动画transition 只要状态发生改变就会产生动画 <a href="#animation" class="link">animation</a> 多个节点来控制动画 性能会更好）
+								在支持H5C3的浏览器尽可能使用css3动画尤其是移动端
+							</p>
+						</li>
+						<li>
+							<h2>Node.js<span class="date"></span></h2>
+							<p class="list">
+								require方法有两个作用
+								1.加载文件模块并执行里面的代码
+								2.拿到被夹在文件模块导出的接口对象
+								在每个文件模块中都提供了一个对象 exports 默认是一个空对象
+
+								启动服务
+								var http=require('http')
+								var server=http.createServer()
+								server.on('request',function(req(请求对象),res(响应对象)){
+								req.url请求的地址例如‘/abc’
+								res.setHeader('Content-Type','text/plain;charset=utf-8')
+								设置编码格式默认以本机编码发送给服务器
+								res.end("必须有END")
+								})
+								server.listen(3000,function(){
+								console.log('Server us running')
+								})
+							</p>
+						</li>
+						<li>
+							<h2>Linux<span class="date"></span></h2>
+							<p class="list">
+								Linux
+								切换用户：su 用户名（不获得环境变量）
+								su -用户名 （获所有）
+								打开文件：./文件名，按tab直接出现
+								关机重启：sync
+								shutdown -r（h） 时间
+								reboot重启，halt关机（now是立即）
+
+								查看当前目录：ls（查看详细信息：ls -l或ll）
+
+								ll查看详细信息：0位表示类型（d表示目录、-表示文件、l表示链接文档...）
+								1-3表示所有者拥有的权限
+								4-6表示同组用户拥有的权限
+								7-9其它拥有该权限的用户
+								r 可读、w可写(不可删，得对文件所属文件夹有权限)、x可执行
+								链接数指硬链 接，查看文件说的是个数，查看文件夹指子文件夹个数(默认是2，一个本身，一个上级。)
+								查看ip地址：ifconfig
+								切换目录：cd cd -回上一次目录 cd ..回上一级
+								查看当前所在目录：pwd
+								家目录（一开始的目录）的特殊符号：～
+								root在/root
+								一般用户在/home
+								创建文件：touch
+
+								编辑文件vi/vim：vi三种模式
+								1.一般模式 a，I，o进入编辑模式，输入:进入末行模式
+								yy复制，y数字y
+								p粘贴
+								u撤销
+								dd删除行 d数字d
+								2.编辑模式 Esc回到一般模式
+								3.末行模式 w保存，q退出，q!不保存退出。Esc回到一般模式。/查找单词，%s/单词/替换单词/g（/g表示全文）。
+								set nu显示行号，set nonu不显示。
+								vim是vi加强版，具有颜色表示
+
+								查看文件：cat 文件名
+								cat -n 列出行号
+								cat /etc/passwd（查看创建了哪些用户）
+
+								主机名：hostname（后加新名字改名，超级用户，只有重启前好用）
+								在etc/sysconfig/network里改重启后好用
+								防火墙：
+								service iptables status
+								service iptables stop
+								service iptables start
+								查看开机是否自动启动：chkconfig iptables - -list
+								关闭（开启）开机时自动启动：chkconfig iptables off（on）
+								获取帮助：man 命令或配置文件
+								（manual）
+								help 命令（一部分）
+								是否连接上其它主机：
+								ping ip地址
+
+								停止进程 ctrl+c
+								清屏 ctrl+l
+								退出 ctrl+q
+								切换 ctrl+alt
+
+								创建文件夹：mkdir 文件夹名
+								多层：mkdir -p
+								删除文件夹：rmdir 文件夹名（空的）
+								rm -r 文件夹名
+								删除文件：rm 文件名
+								复制文件：cp 文件名 复制路径（文件名可用*代表所有前缀）
+								cp-r 文件夹名 复制路径
+								重命名与移动：mv 旧 新
+								mv 文件名 路径
+
+								倒看文件：tac 文件名
+								一页页显示：more 文件名
+								空格下一页
+								enter下一行
+								q退出
+								=当前行行号
+								:f文件名和当前行号
+								显示：less 文件名
+								（同more 可用pageup）
+								查看文件几行：head -n 行数 文件名
+								tail -n 行数 文件名
+								tail -f 文件名（实时跟踪更新）
+
+								重定向： ls ＞文件名
+								ls-l ＞文件名（覆盖写）
+								ls-al ＞＞文件名（加到末尾）
+
+								echo：echo 显示内容＞＞文件名
+
+								软链接：ln -s 目标 创建快捷方式名
+								cd -P 软链接 （进入真的地址）
+								硬链接：ln 目标 链接名
+								两个文件名虽不同但指向同一个文件
+
+								查看代码历史：history
+
+								显示时间：date
+								格式：date ＂+%Y/%m..."
+								显示非当前时间：date -d ＇...＇
+								设置系统时间：date -s ＂时间＂
+
+								查看日历：cal
+								cal-3 （前一个月，当前月，下一个月）
+								cal 某年（显示整年日历）
+
+								增加用户：useradd 用户名（root模式）
+								groups 查看当前用户所在组名
+								id 用户名（查看用户名是否存在）
+								passwd 用户名（设置用户密码，输入无提醒）
+								userdel 用户名（删除用户但保存用户主目录）
+								userdel -r 用户名（全删）
+
+								查看用户信息：whoami （显示自身当前操作用户名）
+								who am i（显示一开始登录用户）
+								who（当前都有谁登录了）
+
+								Linux每个用户都有一个归属group
+								用户名 密码(隐藏) uid gid 家目录 shell版本
+
+								查看组：cat etc/group
+								修改用户：usermod -g 用户组 用户名
+								groupadd 组名（新增组）
+								groupdel 组名（删除组）
+								groupmod -n 新 旧（改组名）
+
+								修改权限：chmod {ugoa}{+-=}{rwx}文件或夹（u用户，g组，o其它、a所有）
+								chmod 数字三位对应三种用户可叠加(r 4、w 2、x 1) ..
+								-R 应用到文件夹里的
+
+								改完etc/sudoers后
+								用户使用root权限：sudo 命令
+
+								改变所有者：chown 用户 文件或名
+								-R 子目录也改
+								改变所属组：chgrp
+
+								查看分区：fdisk -l
+								查看硬盘：df 参数
+								-g 单位
+
+								查找文件或目录：find 搜索范围 匹配条件
+								find .. -name ..(名字)
+								... -user ... (用户名)
+								...{+ - }n.. (大小)
+								(不认识*号，可以加'')
+								过滤查找：grep 参数 查找文件 源文件
+								| 将前一个命令结果输出传递到后面的命令处理
+								-n 显示匹配行及行号
+								文件搜索命令：which 命令
+								只能查命令，比find快
+
+								查看所有进程：ps -aux
+								查看系统健康状态：top 选项
+								-d 秒数(几秒刷新，默认3s)
+								-i 不显示闲置僵死进程
+								-p 监控指定进程
+								进程树：pstree 选项
+								终止进程：kill -9 pid(进程号)
+								kill
+								显示网络统计信息：netstat -anp
+								-an 一定顺序
+								-p 哪个进程在调用
+								-nltp tcp协议进程端口号
+								前后台切换：fg 数字(相应的前台) 后切前
+								ctrl+z 前切后
+
+								gz压缩：gzip 文件(压缩成.gz)
+								gunzip 文件.gz (解压)
+								只压缩文件不压缩文件夹，不保留原来文件
+								zip压缩：zip (-r 压缩文件夹) X.zip 压缩内容
+								可保留原文件
+								unzip 文件.zip (-d 指定地址)(可解压到指定地址)
+								tar打包：tar 参数 X.tar.gz 打包内容(打包目录)
+								-c 产生.tar打包文件
+								-v 显示详细信息
+								-f 指定压缩后名
+								-z 打包同时压缩
+								-x 解包
+								-zxvf(后加-C 地址)，zcvf
+
+								service后台服务管理：同防火墙iptables改为network
+								定时任务：crontab 选项
+								-e 编辑定时任务
+								-l 查询crontab任务
+								-r 删除当前用户所有crontab任务
+								***** 执行的任务(/bin/命令)
+
+								rpm查询：rpm -qa(查询所有安装的rpm包)
+								rpm -qa|grep 包 (过滤)
+								卸载：rpm -e 包
+								rpm -e - -nodeps 包
+								nodeps 如果该rpm包的安装依赖其它包，即使没装，也强制装
+								安装：rpm -ivh 包全名
+								i安装，v显示详细信息，h进度条
+								- -nodeps 不检测依赖进度
+
+								MySQL：
+								安装
+								service mysql start
+								mysqladmin -u root password "root"
+								mysql -u root -p
+								jdk：
+								环境变量位置：/etc/profile
+								JAVA _HOME
+								PATH
+								CLASSPATH
+								source /etc/profile
+								tomcat： 解压
+							</p>
+						</li>
+					</ul>
+				</div>
+				<div class="photowall" id="photowall">
+					<h1>相册</h1>
+					<div class="">
+						<h2>相册1</h2>
+						<div id="wall1" class="wall">
+							<div class="out">
+								<div class="border">
+									<img src="images/photo/web1.jpg" alt="图片" />
+								</div>
+							</div>
+							<div class="out">
+								<div class="border">
+									<img src="images/photo/style21.png" alt="图片" />
+								</div>
+							</div>
+							<div class="out">
+								<div class="border">
+									<img src="images/photo/style11.png" alt="图片" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="board" id="board">
+					<h1>留言板</h1>
+					<ul id="boardul">
+						<li>
+							<div class="info">
+								<i>diudiudiu</i>
+								<a href="#">171738749@qq.com</a>
+								<a href="https://github.com/diudiudiu">
+									https://github.com/diudiudiu
+								</a>
+								<span class="floor">1L</span>
+							</div>
+							<hr>
+							<div class="message" id="message">
+								<p>欢迎留言给我，留言板块开发中！！</p>
+								<span class="time"><i></i>2018.12.4 15:32</span>
+							</div>
+						</li>
+						<li class="hide">
+							<div class="info">
+								<i></i>
+								<a href="#"></a>
+								<a href="#"></a>
+								<span class="floor"></span>
+							</div>
+							<hr>
+							<div class="message">
+								<p>欢迎留言给我，动态留言板块开发中！！</p>
+								<span><i></i>2018.12.4 15:32</span>
+							</div>
+						</li>
+					</ul>
+					<div>
+						<div class="information" id="information">
+							<input type="text" placeholder="昵称" required>
+							<input type="E-mail" placeholder="邮箱" required>
+							<input type="text" placeholder="https://github.com/" required>
+						</div>
+						<div>
+							<textarea name="texta" rows="7" cols="30" wrap="" id="text"></textarea>
+							<span id="send">发送</span>
+						</div>
+					</div>
+				</div>
+				<div class="footer">
+					©2018 <a href="https://github.com/diudiudiu">diudiudiu</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</body>
+
+</html>
