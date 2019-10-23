@@ -99,17 +99,31 @@ person
 
 离开当前绑定的DOM元素时候触发
 
-https://www.cnblogs.com/CandyManPing/p/9384104.html
+
+
+
+
+## Promise 
+
+#### Promise 状态：
+
+- pending:   初始状态
+- fulfilled:     成功
+- rejected:    失败
+
+.then(回调函数)
 
 ## async/await 处理异步
 
-### async
+### async 函数
 
-使用 async 声明一个函数 ，表示是一个异步的函数。如果async 函数中有返回一个值，当调用该函数时，内部会调用 Promise.solve() 把它转化为一个 promise 对象作为返回，如果内部抛出错误，就会调用Promise.reject() 作为返回的 promise 对象。
+使用 async 声明一个函数 ，表示是一个异步的函数。如果 async 函数中有返回一个值，当调用该函数时，内部会调用 Promise.solve() 把它转化为一个 promise 对象作为返回，如果内部抛出错误，就会调用 Promise.reject() 作为返回的 promise 对象。
 
 ### await
 
 await 后面可以放任何表达式，一般放的是一个返回的 promise 对象表达式，await 只能放到 async 函数里面。
+
+当函数执行的时候，一旦遇到 await 就会先返回，等到触发的异步操作完成，再接着执行函数体内后面的语句。
 
 ```javascript
 
@@ -294,7 +308,7 @@ $ 匹配结尾，当有正则修饰符 m 时，表示行结尾位置。
 
 #### 贪婪匹配与惰性匹配
 
-https://blog.csdn.net/u012047933/article/details/38365541
+
 
 ```javascript
 //贪婪匹配 取最多项
@@ -345,6 +359,8 @@ console.log( regex )
 
 
 #### 常用的操作：验证（查找），切分，提取，替换
+
+#### https://blog.csdn.net/u012047933/article/details/38365541
 
 1. 验证（查找） 最常用的是test
 
