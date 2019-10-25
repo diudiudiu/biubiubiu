@@ -361,13 +361,23 @@ String	search	split	match	replace
 
 RegExp	test	exec
 
-###### String.seach() 返回正则匹配到的第一个子串在目标字符串中的下标。
+###### String.seach() 
+
+1. 返回正则匹配到的第一个子串在目标字符串中的下标。
+
+2. 不执行全局匹配，它将忽略标志 g。
+
+3. regexp 的 lastIndex 属性。
 
 ```javascript
 let str="diudiudiu博客abc";
 let reg=/\w+/g 
 console.log(str.search(reg)); // => 0
 ```
+
+###### String.split()
+
+
 
 search match 会把字符串转换为正则
 
