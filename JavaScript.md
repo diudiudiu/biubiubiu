@@ -166,6 +166,16 @@ async getFaceResult () {
 
 
 
+工作中遇到的问题：两种资源要加载（公共资源，第三方资源），其中第三方资源又分为2种（第三方A资源，第三方B资源）。
+
+需求：第三方资源要在公共资源之前加载，且无论第三方资源是否加载成功都要加载公共资源。第三方A资源要在B资源前加载，且无论A资源与B资源哪个失败都互不阻塞。A资源B资源公共资源各有一个接口，加载方法为同一个方法。
+
+```javascript
+
+
+
+```
+
 
 
 ###  内置对象
@@ -361,13 +371,12 @@ String	search	split	match	replace
 
 RegExp	test	exec
 
-###### String.seach() 
+###### String=>str.seach() 
 
-1. 返回正则匹配到的第一个子串在目标字符串中的下标。
-
-2. 不执行全局匹配，它将忽略标志 g。
-
-3. regexp 的 lastIndex 属性。
+1. 接受一个字符串为参数，如果格式与正则类似，会把字符串转换为正则表达式。
+2. 返回正则表达式或字符串匹配到的第一个子串在目标字符串中的下标。
+3. 不执行全局匹配，它将忽略标志 g。
+4. regexp 的 lastIndex 属性。
 
 ```javascript
 let str="diudiudiu博客abc";
@@ -375,19 +384,50 @@ let reg=/\w+/g
 console.log(str.search(reg)); // => 0
 ```
 
-###### String.split()
+###### String=>str.split()
+
+1. 接受两个参数，第一个必填参数，字符串或者正则表达式，并从匹配到的地方分割str。第二个可选参数，数字，指定返回的数组的最大长度。没有设置该参数，整个字符串都会被分割，不考虑它的长度。
+2. 返回一个字符串按匹配规则分割出的字符串数组。
+
+如果理解了请看下面例子
+
+```javascript
+var colorText = "red,blue,green,yellow";
+var colors3 = colorText.split(/[^\,]+/); 
+console.log(colors3) // ???
+// 你以为是不是这样的 
+// =>>> ["red", "blue", "green", "yellow"]
 
 
+// 其实是这样的
+// =>>> ["", ",", ",", ",", ""]
+```
 
-search match 会把字符串转换为正则
+`[^\,]+` 意思应该是以不是‘，’的多个字符”作为分隔符，`\,` 是转义‘,’ `^` 是取非，这样看就很明显了。不要被思维思维局限了。
 
-##### match返回结果的格式，与正则对象是否有修饰符 g 有关。
+###### String=>str.match()
 
-没有 g ,返回的是标准匹配格式的数组。 第一个是整体匹配内容，第二个是分组捕获的内容，然后是整体匹配的定义一个下标，最后是输入的目标字符串。
+1. 接受一个字符串为参数，如果格式与正则类似，会把字符串转换为正则表达式。
+2. 返回匹配到结果的数组，返回结果的格式，与正则对象是否有修饰符 g 有关。
+3. 没有 g ,返回的是标准匹配格式的数组。 第0个元素是整体匹配内容，其余元素是分组捕获的内容。返回的数组还含有两个对象属性。index 属性是匹配文本的起始字符在 str 中的位置，input 属性声明的是对 str 的引用。
+4. 有 g ,返回的是所有匹配的内容的数组。
+5. 无匹配内容时返回 null。
 
-有 g ,返回的是所有匹配的内容。
+```javascript
+var str="1 plus 2 equal 3"
+var match = str.match(/( \d)|( e)/)
+console.log(match)				// => Array [" 2", " 2", undefined]
+console.log(match.index)  // =>6
+console.log(match.input)  // =>"1 plus 2 equal 3"
 
-无匹配内容时返回 null。
+var macthg = str.match(/( \d)|( e)/g)
+console.log(matchg)				// => Array [" 2", " e", " 3"]
+
+```
+
+###### String=>str.replace()
+
+
 
 没有 g 时，返回信息多，有 g 时，就没有关键信息 index 了。
 
