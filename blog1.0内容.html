@@ -242,17 +242,17 @@
 								网格单元 (Grid Cell) 两个相邻的列网格线和两个相邻的行网格线组成的是网格单元
 								网格区域 (Grid Area) 四个网格线包围的总空间（含一个或多个网格单元）
 								html代码
-								&lt;div class="container">
-								&lt;div class="item1">&lt;/div>
-								&lt;div class="item2">&lt;/div>
-								&lt;div class="item3">&lt;/div>
-								&lt;div class="item4">&lt;/div>
-								&lt;div class="item5">&lt;/div>
-								&lt;div class="item6">&lt;/div>
-								&lt;div class="item7">&lt;/div>
-								&lt;div class="item8">&lt;/div>
-								&lt;div class="item9">&lt;/div>
-								&lt;/div>
+								<div class="container">
+								<div class="item1"></div>
+								<div class="item2"></div>
+								<div class="item3"></div>
+								<div class="item4"></div>
+								<div class="item5"></div>
+								<div class="item6"></div>
+								<div class="item7"></div>
+								<div class="item8"></div>
+								<div class="item9"></div>
+								</div>
 								css属性:
 								.container{
 								grid-template行列轨道大小
@@ -438,7 +438,7 @@
 								contains() 是否包含一个类名
 								DOM.classList 获取的是这个DOM元素的所有class
 								DOM.classList.add('blue') 为DOM元素添加一个为blue的类
-								&lt;div data-user="wl" data-user-age="18">&lt/div>
+								<div data-user="wl" data-user-age="18">&lt/div>
 								自定义属性 data-*
 								命名规则遵循驼峰命名法
 								获取方式 dataset
@@ -467,7 +467,7 @@
 								注意不是body
 								多媒体
 								自定义播放器
-								&lt;video src="video/diudiudiu.mp4" controls> &lt;/video>
+								<video src="video/diudiudiu.mp4" controls> </video>
 								controls表示底下控制栏
 								为保证各个一致性 一般自制控制栏
 								---------------------------------------------------
@@ -600,7 +600,7 @@
 								多个有边框div在一行可用margin-left或者margin-right:-1px;去除边框紧贴变宽的效果。hover触发边框时，应加上position：relative以此来提升z-index。也可在原盒子附加position：relative。
 								清除浮动：
 								1.额外标签
-								在浮动的块元素后加个空标签&lt;div style="clear: both;"&gt;&lt;/div&gt; 或&lt;br /&gt;等标签。
+								在浮动的块元素后加个空标签<div style="clear: both;"></div> 或<br />等标签。
 								缺点：添加许多无意义的标签，结构化差。
 								2.给父级元素加overflow属性方法
 								可以通过BFC的方式，给父级元素加：overflow为 hidden(主要) | auto | scroll。
@@ -890,9 +890,9 @@
 								}
 
 								创建元素的三种方式：
-								1.document.write(&lt;div&gt;aa&lt;/div&gt;);
+								1.document.write(<div>aa</div>);
 								缺陷：如果是在页面加载完毕后，通过这种方式创建元素，那么页面上存在的所有内容会被全部干掉。
-								2.innerHTML="&lt;div&gt;aaa&lt;/div&gt;"
+								2.innerHTML="<div>aaa</div>"
 
 								3.document.createElement("div")
 								把元素追加到父级元素中
@@ -1070,7 +1070,7 @@
 								var str="abcdeqwaszxafffgkljp"
 								str=str.toLocaleLowerCase();
 								var obj={};
-								for(var i=0;i&lt;str.length;i++){
+								for(var i=0;i<str.length;i++){
 								var key = str[i]; // 每个字母
 								if(obj[key]){
 								//是否存在这个键
@@ -1093,13 +1093,13 @@
 								arr.every(function(a,b){
 								a 元素的值
 								b 索引的值
-								return a&gt;2000;
+								return a>2000;
 								}); 数组中的每个数字是否全部大于2000
 
 								arr.filter(function(a,b){
 								a 元素的值
 								b 索引的值
-								return a&gt;2000;
+								return a>2000;
 								}); 返回数组中的数字大于2000的子数组
 								arr.push(x) arr数组追加x,返回长度
 								arr.pop() 删除最后一个，返回删除元素的值
@@ -1112,7 +1112,7 @@
 								arr.map(callback) 返回arr执行过callback函数的结果数组
 								arr.reverse() 反转
 								arr.sort(function(a,b){
-								if(a&gt;b){
+								if(a>b){
 								return 1;
 								}else if(a==b){
 								return 0;
@@ -1127,59 +1127,6 @@
 
 								如果是对象&&true true&&对象
 								结果就是后方的 true 对象
-							</p>
-						</li>
-						<li>
-							<h2>正则表达式<span class="date"></span></h2>
-							<p class="list">
-								正则表达式用于验证或查找信息，在JS走应用广泛，JS有专门的类和对象。
-								在 JavaScript 中，正则表达式通常用于两个字符串方法 : search() 和 replace()。
-								search() 方法 用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串，并返回子串的起始位置。
-								replace() 方法 用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。
-								var reg = /pattern/flags // 字面量创建方式
-								var reg = new RegExp(pattern,flags); //实例创建方式
-								reg.test(str);//验证字符串是否匹配
-								匹配中文[\u4e00-\u9fa5]
-
-								
-								. 表示除/n以外的任何字符
-								[a-z] a-z任意一个字母
-								[] 把正则表达式中元字符意义干掉 如[.]就是一个.
-								x|y 匹配x或y 优先级最低
-								() 改变优先级 分组
-								{n} n次
-								{n,m} 前面的表达式出现了n-m次
-								{n,} 前面的表达式出现了n次以上
-								* 前面的表达式出现了0次或多次
-								+ 前面的表达式出现了1次或多次
-								? 前面的表达式出现了0次或1次 中止贪婪模式
-								\ 做为转意，
-								
-
-
-
-								(x) 匹配x 用$进行反向提取
-
-								严格模式！！！！！
-
-								^[0-9][a-z]$ 严格模式 0a
-								[xyz] 字符集(character set)，匹配这个集合中的任一一个字符(或元字符)
-								[^xyz] 不匹配这个集合中的任何一个字符
-								[\b] 匹配一个退格符
-								
-								\cX 这儿，X是一个控制符，/\cM/匹配Ctrl-M
-								\d 匹配一个字数字符，/\d/ = /[0-9]/
-								\D 匹配一个非字数字符，/\D/ = /[^0-9]/
-								\n 匹配一个换行符
-								\r 匹配一个回车符
-								\s 匹配一个空白字符，包括\n,\r,\f,\t,\v等
-								\S 匹配一个非空白字符，等于/[^\n\f\r\t\v]/
-								\t 匹配一个制表符
-								\v 匹配一个重直制表符
-								\w 匹配一个字母数字下划线，如[\w]匹配"$5.98"中的5，等于[a-zA-Z0-9_]
-								\W 匹配一个不可以组成单词的字符，如[\W]匹配"$5.98"中的$，等于[^a-zA-Z0-9_]。
-
-
 							</p>
 						</li>
 						<li>
@@ -1361,9 +1308,9 @@
 								Canvas是HTML5新元素用于绘制图画，默认大小为300*150；如果设置大小需要在Canvas的标签中设置height、width，Canvas标签内的内容只在浏览器不支持canvas的时候显示。开始绘画时，首先要获取到Canvas的标签的id，通过getContext()函数设置其2D
 								or 3D 效果。<br>
 								<em>html结构</em>
-								&lt;canvas id="canvas" width="1024" height="768"&gt;
+								<canvas id="canvas" width="1024" height="768">
 								&nbsp;&nbsp;&nbsp;&nbsp;当前浏览器不支持canvas，请更换浏览器。
-								&lt;/canvas&gt;
+								</canvas>
 								<em>JS代码</em>
 								var canvas=document.getElementById('canvas');
 								var context=canvas.getContext('2d');//绘图上下文环境。
@@ -1439,9 +1386,9 @@
 								<span id="html5shiv">html5shiv.js</span> h5兼容插件 必须引入在头部（在页面结构之前）
 								需要优化处理：条件注释
 								固定语法 lt小于 gt 大于lte小于等于 gte大于等于
-								&lt;!--[if lt IE9]>
-								&lt;script>&lt;/script>
-								&lt;![endif]-->>
+								<!--[if lt IE9]>
+								<script></script>
+								<![endif]-->>
 
 								stellar.js JQuery视察滚动效果插件(data-stellar-background-ratio="0.5" 按正常滚动速率的0.5倍滚动)
 							</p>
@@ -1523,17 +1470,17 @@
 								7.将渲染结构的HTML 设置到默认元素的innerHTML中
 								模版最好写在script标签中
 								例如：
-								&lt;script id="tmpl" type="text/x-art-template">
+								<script id="tmpl" type="text/x-art-template">
 								{{each comments(模版名)}}
 								each 内部 $value 拿到的是当前被遍历的那个元素
 								$index拿到的是下标
-								&lt;tr>
-								&lt;td>{{}}&lt;/td>
-								&lt;td>{{}}&lt;/td>
-								&lt;td>{{}}&lt;/td>
-								&lt;/tr>
+								<tr>
+								<td>{{}}</td>
+								<td>{{}}</td>
+								<td>{{}}</td>
+								</tr>
 								{{/each}}
-								&lt;/script>
+								</script>
 								type="text/x-模版名
 								var context={comments(模版设置的名字): 请求的数据}
 								var html=template('tmpl'(script标签的ID),context)
@@ -1590,16 +1537,16 @@
 						<li>
 							<h2>Vue.js<span class="date"></span></h2>
 							<p class="list">
-								&lt;p v-cloak&gt;{{msg}}&lt;/p&gt;
+								<p v-cloak>{{msg}}</p>
 								v-cloak:能够解决插值表达式闪烁的问题需要在style标签设置[v-cloak]display:none;html标签会转义不会让浏览器解析。
-								&lt;p v-text="msg"&gt;&lt;/p&gt;
+								<p v-text="msg"></p>
 								v-text:默认没有闪烁问题 会覆盖元素中原本的内容。插值表达式不会覆盖只会插入。html标签会转义不会让浏览器解析。
-								&lt;p v-html="msg"&gt;&lt;/p&gt;
+								<p v-html="msg"></p>
 								v-html：覆盖内容 并解析msg中的标签
-								&lt;p v-bind:title="mytitle + '123'"&gt;&lt;/p&gt;
+								<p v-bind:title="mytitle + '123'"></p>
 								v-bind:title简写为:title
 								v-bind: 是Vue中提供用于绑定属性的指令,绑定后会将属性的内容当作JS表达式。
-								&lt;p v-on:click="show"&gt;&lt;/p&gt;
+								<p v-on:click="show"></p>
 								v-on:click简写为@click
 								v-on: 是Vue中提供用于绑定事件的指令
 								事件修饰符
@@ -1609,12 +1556,12 @@
 								@click.self 只有触发当前元素才触发
 								self 只会组织自己身上的冒泡行为的触发
 								@click.once 只触发一次
-								&lt;input type="text" v-model="msg">
+								<input type="text" v-model="msg">
 								v-model可以实现表单和和Model中数据的双向绑定，只能运用在表单元素中
-								&lt;p v-for="(val,key) in user" &gt; 值是{{ val  }}---键是：{{ key }}&lt;/p&gt;
+								<p v-for="(val,key) in user" > 值是{{ val  }}---键是：{{ key }}</p>
 								v-for循环时候，key属性只能用number或string，key在使用的时候，必须使用v-bind属性绑定指定key的值
-								&lt;p v-if="flag" &gt;asdasd&lt;/p&gt;
-								&lt;p v-show="flag" &gt;asdasd&lt;/p&gt;
+								<p v-if="flag" >asdasd</p>
+								<p v-show="flag" >asdasd</p>
 								v-if：当隐藏的时候 是类似注释一样,移除元素，有较高的切换性能消耗，如果元素涉及到频繁的切换，最好不要使用。
 								v-show:隐藏是 display：none，有初较高的初始渲染消耗，如果元素可能永远不被显示给用户看到，则不要使用该属性。
 								在Vue中自定义属性要以v-开头
@@ -1666,10 +1613,10 @@
 								transition元素是Vue官方提供的
 								将动画的dom节点放在transition标签中
 
-								&lt;transition>
-								&lt;h3 v-if="flag">这是一个H3&lt;/h3>
+								<transition>
+								<h3 v-if="flag">这是一个H3</h3>
 
-								&lt;/transition>
+								</transition>
 								style标签中设置：
 								/*两组样式控制 transition 内部动画*/
 								/*v-enter是进入起始状态*/
@@ -1691,10 +1638,10 @@
 								------transitionGroup------
 								在实现列表过度的时候，如果需要过度的元素是通过v-for循环渲染出来的，
 								不能使用 transition 包裹，需要使用transitionGroup
-								&lt;transition-group appear>
-								&lt;h3 v-if="flag">这是一个H3&lt;/h3>
+								<transition-group appear>
+								<h3 v-if="flag">这是一个H3</h3>
 
-								&lt;/transition-group>
+								</transition-group>
 								.v-move 和 .v-leave-active 配合使用，
 								能够实现列表后续元素渐渐的上飘。
 								也可自定义动画，在transition元素 设置 name属性，然后 在style标签中名字为.my-代替.v-
@@ -1707,14 +1654,14 @@
 
 
 								使用第三方animate.css
-								&lt;transition enter-active-class="animated bounceIn" leave-active-class="animated bounceOut"
+								<transition enter-active-class="animated bounceIn" leave-active-class="animated bounceOut"
 								:duration="{enter:200,leave:400}">
-								&lt;h3 v-if="flag">这是一个H3&lt;/h3>
+								<h3 v-if="flag">这是一个H3</h3>
 
-								&lt;/transition>
+								</transition>
 								bounceIn,bounceOut可以选择不同的效果
 								animated 可放在元素身上
-								&lt;h3 v-if="flag" class="animated">这是一个H3&lt;/h3>
+								<h3 v-if="flag" class="animated">这是一个H3</h3>
 								duration 设置入场时间离场时间
 
 								动画钩子函数
@@ -1726,12 +1673,12 @@
 									position: absolute;
 								}
 
-								&lt;transition
+								<transition
 								@before-enter="beforeEnter"
 								@enter="enter"
 								@after-enter="afterEnter">
-								&lt;div class="ball" v-show="flag">&lt;/div>
-								&lt;/transition>
+								<div class="ball" v-show="flag"></div>
+								</transition>
 								methods:{
 								// 动画钩子函数的第一个参数 表示要执行的DOM元素 是个原生js对象
 								beforeEnter(el){
@@ -1823,7 +1770,7 @@
 						<li>
 							<h2>Vue.js组件<span class="date"></span></h2>
 							<p class="list">
-								&lt;my-com1>&lt;/my-com1>
+								<my-com1></my-com1>
 								// 全局组件！！！！！！！！
 								//使用Vue.extend 来创建全局的Vue组件
 								var com1=Vue.extend({
@@ -1839,19 +1786,19 @@
 
 
 
-								&lt;template id="tmp1">
-								&lt;div>
-								&lt;h2>外部定义结构方便，代码提示&lt;/h2>
-								&lt;/div>
-								&lt;/template>
+								<template id="tmp1">
+								<div>
+								<h2>外部定义结构方便，代码提示</h2>
+								</div>
+								</template>
 								Vue.component('myCom4',{
 								template:'#tmp1',
 								// 通过id
 								});
-								&lt;my-com5>&lt;/my-com5>
+								<my-com5></my-com5>
 
 								Vue.component('myCom5',{
-								template:'&lt;h3>{{msg}}&lt;/h3>',
+								template:'<h3>{{msg}}</h3>',
 								// 通过id
 								data:function(){
 								return{
@@ -1864,34 +1811,7 @@
 						<li>
 							<h2>Vue生命周期<span class="date"></span></h2>
 							<p class="list">
-								Vue共八个声明周期
-								new Vue()=>Init Events&Lifecycle(实例初始化)
-								①==beforeCreate在实例初始化之后，数据观测 和 事件配置之前被调用==>Init injections & reactivity 进行事件初始化，数据观测
-								②==created在实例创建完成后被立即调用。在这一步实例完成以下配置：数据观测(data observer),属性和方法的运算，watch/event事件回调==>判断对象是否有el选项
-								if(没有){
-								停止编译，停止生命周期，直到该vue实例上调用vm.$mount(el)
-								}else{
-								判断是否有template参数，该参数有无对生命周期无影响
-								if(有template){
-								将其作为模版编译成render函数
-								}
-								else{
-								将外部HTML作为模版编译
-								}
-								}
-								★★模版优先级★★
-								★★render函数选项>template选项>outer HTML★★
-								③==beforeMount在挂载开始之前被调用：相关的render函数首次被调用。此处还未能获取DOM。该钩子在服务器端渲染期间不被调用==>Create vm.$el and replace
-								'el'with it 给vue实例对象添加$el成员，并且替换掉挂载的DOM元素
-								④==mounted el被新创建vm.$el替换，并挂载到实例上去之后调用该钩子。该钩子服务器端渲染期间不被调用==>Mounted=>when data changes
-								⑤==beforeUpdata数据发生在虚拟DOM打补丁之前。该钩子在该钩子服务器端渲染期间不被调用，因为只有初次渲染会在服务端进行==>Virtual DOM re-render and patch
-								当vue发现data中的数据发生了改变，就会触发对应组件的重新渲染打补丁
-								⑥==updated由于数据更改导致的虚拟DOM重新渲染和打补丁，在这之后会调用该钩子。该钩子在该钩子服务器端渲染期间不被调用==>when vm.$destroy() is called
-								当显示调用destory()函数销毁组件或关闭页面，组件开始执行销毁程序。
-								⑦==beforeDestroy实例销毁之前调用，在这一步实例仍然完全可用==>Teardown watchers,child components and event listeners
-								解绑实例指示的所有东西包括监听器，实例，事件。
-								⑧==destoryed Vue实例销毁后调用。调用后，Vue实例指示的所有东西都会解绑，所有的事件监听器会被移除，所有的子实例也会被销毁。该钩子在该钩子服务器端渲染期间不被调用。==>Destoryed
-
+								
 							</p>
 						</li>
 						<li>
@@ -1910,8 +1830,8 @@
 							<h2>路由<span class="date"></span></h2>
 							<p class="list">
 								路由传参
-								&lt;router-link to:"/login?id=10">&lt;/router-link>
-								&lt;router-link to:"/login?:12">&lt;/router-link>
+								<router-link to:"/login?id=10"></router-link>
+								<router-link to:"/login?:12"></router-link>
 								this.$route.params.id
 								this.$route.query.id
 								路由嵌套 children 属性

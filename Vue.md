@@ -10,9 +10,71 @@ components组件内data为什么返回对象？
 创建订阅器Dep类 订阅器添加在监听器
 创建订阅者Watcher
 
+## vue 生命周期
 
+Vue共八个声明周期
 
+1. ### beforeCreate() 
 
+   在实例初始化之后，数据观测 和 事件配置之前被调用，下一步进行事件初始化，数据观测。
+
+2. 
+
+3. 
+
+   ### 
+
+​                
+
+​                ①====>
+
+​                ②==created在实例创建完成后被立即调用。在这一步实例完成以下配置：数据观测(data observer),属性和方法的运算，watch/event事件回调==>判断对象是否有el选项
+
+​                if(没有){
+
+​                停止编译，停止生命周期，直到该vue实例上调用vm.$mount(el)
+
+​                }else{
+
+​                判断是否有template参数，该参数有无对生命周期无影响
+
+​                if(有template){
+
+​                将其作为模版编译成render函数
+
+​                }
+
+​                else{
+
+​                将外部HTML作为模版编译
+
+​                }
+
+​                }
+
+​                ★★模版优先级★★
+
+​                ★★render函数选项>template选项>outer HTML★★
+
+​                ③==beforeMount在挂载开始之前被调用：相关的render函数首次被调用。此处还未能获取DOM。该钩子在服务器端渲染期间不被调用==>Create vm.$el and replace
+
+​                'el'with it 给vue实例对象添加$el成员，并且替换掉挂载的DOM元素
+
+​                ④==mounted el被新创建vm.$el替换，并挂载到实例上去之后调用该钩子。该钩子服务器端渲染期间不被调用==>Mounted=>when data changes
+
+​                ⑤==beforeUpdata数据发生在虚拟DOM打补丁之前。该钩子在该钩子服务器端渲染期间不被调用，因为只有初次渲染会在服务端进行==>Virtual DOM re-render and patch
+
+​                当vue发现data中的数据发生了改变，就会触发对应组件的重新渲染打补丁
+
+​                ⑥==updated由于数据更改导致的虚拟DOM重新渲染和打补丁，在这之后会调用该钩子。该钩子在该钩子服务器端渲染期间不被调用==>when vm.$destroy() is called
+
+​                当显示调用destory()函数销毁组件或关闭页面，组件开始执行销毁程序。
+
+​                ⑦==beforeDestroy实例销毁之前调用，在这一步实例仍然完全可用==>Teardown watchers,child components and event listeners
+
+​                解绑实例指示的所有东西包括监听器，实例，事件。
+
+​                ⑧==destoryed Vue实例销毁后调用。调用后，Vue实例指示的所有东西都会解绑，所有的事件监听器会被移除，所有的子实例也会被销毁。该钩子在该钩子服务器端渲染期间不被调用。==>Destoryed
 
 ### 事件修饰符
 
