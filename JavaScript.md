@@ -314,15 +314,24 @@ $ 匹配结尾，当有正则修饰符 m 时，表示行结尾位置。
 
 ##### 断言也是匹配位置
 
-先行断言
-
 (?=abc) 正向先行断言 匹配某一项，其后面一定接着abc。
 
 (?!abc) 负向先行断言 匹配某一项，其后面一定不是abc。
 
 (?<=abc) 正向后行断言 匹配某一项，其前面一定是abc。
 
-(?<!abc) 正向先行断言 匹配某一项，其前面一定不是abc。
+(?<!abc) 负向后行断言 匹配某一项，其前面一定不是abc。
+
+###### 断言练习
+
+```javascript
+// 密码必须包含数字，且必须以字母开头，一共8-12位。
+var exp = /^[a-zA-Z](?![a-zA-Z]+$)\w{7,11}$/
+// ^ 匹配一行的开头位置
+// (?![0-9]+$) 预测该位置后面不全是数字
+```
+
+
 
 #### 括号作用
 
@@ -334,7 +343,7 @@ $ 匹配结尾，当有正则修饰符 m 时，表示行结尾位置。
 
 (?:good|nice) 非捕获分支结构 good或nice，进行分组编号，可以反引。
 
-\2 反向饮用。 表示饮用第二个括号内捕获的数据。
+\2 反向引用。 表示饮用第二个括号内捕获的数据。
 
 #### 修饰符
 
@@ -405,6 +414,19 @@ console.log(colors3) // ???
 
 `[^\,]+` 意思应该是以不是‘，’的多个字符”作为分隔符，`\,` 是转义‘,’ `^` 是取非，这样看就很明显了。不要被思维思维局限了。
 
+##### RegExp 静态属性
+
+| 属性            | 说明                                                |
+| --------------- | --------------------------------------------------- |
+| input           | 最近一次目标字符串，可以简写成 $_ 。                |
+| lastMatch       | 最近一次匹配的文本，可以简写成 $& 。                |
+| lastParen       | 最近一次捕获的文本，可以简写成 $+ 。                |
+| leftContext     | 目标字符串中 lastMatch 之前的文本，可以简写成 $` 。 |
+| rightContext    | 目标字符串中 lastMatch 之后的文本，可以简写成 $' 。 |
+| `$1，$2,...,$9` | 最近一次第 1-9 个分组里捕获的数据                   |
+
+
+
 ###### String=>str.match()
 
 1. 接受一个字符串为参数，如果格式与正则类似，会把字符串转换为正则表达式。
@@ -428,20 +450,95 @@ console.log(matchg)				// => Array [" 2", " e", " 3"]
 ###### String=>str.replace()
 
 1. 接受两个参数，第一个为字符串或正则表达式，第二个参数为字符串或函数。
+
 2. 返回一个匹配后被替换的新字符串。
-3. 
 
-##### exec 比 match 强大
+3. 如果第二个参数是匿名函数，每次捕获1次，这个匿名函数就会执行1次。
 
-exec 可以接着上一次匹配后继续匹配。
+   第二个参数中特殊字符
 
-```javascript
-var string = "2017.06.27"
-var regex2 = /\b(\d+)\b/g
-console.log( regex )
-```
+   | 字符             | 说明                           |
+   | ---------------- | ------------------------------ |
+   | $&               | 匹配到的子串文本               |
+   | $`               | 匹配到的子串的左边文本         |
+   | $'               | 匹配到的子串的右边文本         |
+   | $$               | 美元符号                       |
+   | `$1，$2,...,$99` | 匹配第 1-99 个分组里捕获的文本 |
+
+   
+
+   - 这个匿名函数有三个参数，0：要替换的字符串，1：替换位置，2：原字符串。
+   - 当设置参数时，第一个为匹配到的字符串，之后为分组捕获的结果。
+
+   ```javascript
+   var st="hello123hello456"
+   var reg=/hello/g;
+   var ss=st.replace(reg,function(){
+   	console.log(arguments)
+   	return "world"     
+   })
+   
+   // ==> Object { 0: "hello", 1: 0, 2: "hello123hello456" }
+   // ==> Object { 0: "hello", 1: 8, 2: "hello123hello456" }
+   
+   
+   
+   var url= window.location.href
+   const search = url.substr(url.indexOf('?')+1)
+   const obj={}
+   search.replace(/([^&=]+)=([^&=]*)/g,function(rs,$1,$2){
+     console.log(rs)
+     console.log($1)
+     console.log($2)
+   	obj[decodeURIComponent($1)]=decodeURIComponent($2)
+   })
+   
+   
+   
+   ```
 
 
+
+###### RegExp=>regex.test()
+
+1. 传入一个要检测的字符串。
+
+2. 判断目标字符串中是否有满足正则匹配的子串。返回布尔值。 
+
+3. 正则表达式有个 lastIndex 属性，当全局匹配 g 时，会在 lastIndex 的位置开始匹配，注意绝大多数情况下匹配完要归0。
+
+   ```javascript
+   const str="haha haha"
+   const reg=/haha/g
+   
+   console.log(reg.test(str))
+   //打印 true
+   
+   console.log(reg.lastIndex)
+   // 打印4，因为匹配到了，所以设置lastIndex为匹配结果紧挨着的字符位置
+   
+   console.log(reg.test(str))
+   // 打印 true
+   
+   console.log(reg.lastIndex)
+   // 打印9，因为匹配到了，所以设置lastIndex为匹配结果紧挨着的字符位置
+   
+   console.log(reg.test(str))
+   // 打印 false，因为从lastIndex位置检索字符串，已经没有匹配结果了
+   
+   console.log(reg.lastIndex)
+   // 打印0，因为没有匹配到结果，所以将lastIndex重置为0
+   
+   ```
+
+###### RegExp=>regex.exec()
+
+1. 传入需要匹配的字符串。
+2. 返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为 null。
+3. 当没有全局 g 时，返回的是标准匹配格式的数组。 第0个元素是整体匹配内容，其余元素是分组捕获的内容。返回的数组还含有两个对象属性。index 属性是匹配文本的起始字符在传入的字符串 str 中的位置，input 属性声明的是对传入的字符串 str 的引用。
+4. 当全局 g 时，它会在 lastIndex 属性指定的字符处开始检索字符串 string。当找到与表达式相匹配的文本时，在匹配后，将 lastIndex 属性设置为匹配文本的最后一个字符的下一个位置。当 exec() 再也找不到匹配的文本时，它将返回 null，并把 lastIndex 属性重置为 0。
+
+exec 比 match 强大,exec 可以接着上一次匹配后继续匹配。
 
 #### 常用的操作：验证（查找），切分，提取，替换
 
