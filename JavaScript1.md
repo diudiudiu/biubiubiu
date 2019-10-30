@@ -159,64 +159,15 @@ Instanceof的判断规则是：
 沿着A的__proto__这条线来找，同时沿着B的prototype这条线来找，
 如果两条线能找到同一个引用，即同一个对象，那么就返回true。如果找到终点还未重合，则返回false。
 
-深拷贝与浅拷贝  2019年7月2日
-一、浅拷贝是拷贝引用，拷贝后的引用都是指向同一个对象的实例，彼此之间的操作会互相影响。
-    浅拷贝分两种情况。
-1.直接拷贝源对象的引用。
-  var a = {name: '小明'} 
-  var b = a 
-  console.log(a === b) //true
-  a.name = 'abcd';
-  console.log(b.name) //'abcd'
-2.是源对象拷贝实例，但其属性拷贝引用。
-  var a = [{name: '小明'}, {age: 18}];
-  var b = a.slice();
-  console.log(a === b); // false,外层数组拷贝的是实例
-  a[0].age = 20;
-  console.log(b[0].age); // 20 元素拷贝的是引用
 
-
-二、深拷贝在堆中重新分配内存，并且把源对象所有属性都进行新建拷贝，以保证深拷贝的对象的引用图不包含任何原有对象或对象图上的任何对象，拷贝后的对象与原来的对象是完全隔离，互不影响。
-较为简单的方法通过JSON.stringfy()和JSON.parse()，但是undefined、function、symbol 会在转换过程中被忽略。
-
-运用递归的方法进行深拷贝
-function deepCopy(obj) {
-  var result = Array.isArray(obj) ? [] : {}
-  for (var key in obj) {
-    if (obj.hasOwnProperty(key)) {
-      if (typeof obj[key] === 'object' && obj[key]!==null) {
-        result[key] = deepCopy(obj[key])   //递归复制
-      } else {
-        result[key] = obj[key]
-      }
-    }
-  }
-  return result
-}
 
 闭包有三个特性：
 1.函数嵌套函数 
 2.函数内部可以引用外部的参数和变量 
 3.参数和变量不会被垃圾回收机制回收
 
-JavaScript的执行机制
-js是单线程语言，JavaScript版的"多线程"都是用单线程模拟出来的。
-宏任务：setTimeOut setInterval 
-微任务：promise.then promise.catch
-
-宏任务->执行结束->是否有可执行的微任务
--> 没有 开始新的宏任务
--> 有   执行所有微任务 ->开始新的宏任务
 
 
-事件委托
-
-1.管理的函数变少了。不需要为每个元素都添加监听函数。对于同一个父节点下面类似的子元素，可以通过委托给父元素的监听函数来处理事件。
-2.可以方便地动态添加和修改元素，不需要因为元素的改动而修改事件绑定。
-3.JavaScript和DOM节点之间的关联变少了，这样也就减少了因循环引用而带来的内存泄漏发生的概率。
-
-Event对象提供了一个属性叫target，可以返回事件的目标节点，我们成为事件源，也就是说，target就可以表示为当前的事件操作的dom，但是不是真正操作dom。
-标准浏览器用ev.target，IE浏览器用event.srcElement，此时只是获取了当前节点的位置，并不知道是什么节点名称，这里我们用nodeName来获取具体是什么标签名。这样改下就只有点击li会触发事件了，且每次只执行一次dom操作
 
 
 循环遍历
@@ -260,20 +211,3 @@ map无法进行中断
 for循环、for...in,for...of，支持await
 for和for...of中可以使用break和continue
 for...in会忽略continue和break
-
-Object.seal()会创建一个密封的对象，
-这个方法实际上会在一个现有对象上调用object.preventExtensions(...)并把所有现有属性标记为configurable:false
-Object.freeze()会创建一个冻结对象，
-这个方法实际上会在一个现有对象上调用Object.seal(),并把所有现有属性标记为writable: false,这样就无法修改它们的值。
-
-Object.definePrototype(obj,key,{})
-
-configurable,writable,enumerable默认是false
-
-configurable: false 时，不能删除当前属性，且不能重新配置当前属性的描述符(有一个小小的意外：可以把writable的状态由true改为false,但是无法由false改为true),但是在writable: true的情况下，可以改变value的值
-configurable: true时，可以删除当前属性，可以配置当前属性所有描述符。
-
-writable: true  是否可以改变
-
-enumerable
-
