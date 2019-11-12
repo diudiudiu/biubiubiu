@@ -337,6 +337,35 @@ console.log(x.serialize());
 
 ## 事件
 
+### blur 与 focus 事件
+
+这个两个事件不止存在与 input a元素中，还可以给div等块级元素设置事件，只需要设置tab属性。
+
+**tab属性**：用键盘上的tab键进行移动光标的时候，光标只在具有tab属性的元素上进行跳转。
+
+给div等块元素设置tab属性：tabindex=数字(与z-index类似，计算tab起点)。
+
+定义tab属性后，元素是默认会加上焦点虚线的，IE中设置`hidefocus="true"`去除，其他浏览器设置`outline=0`进行去除。
+
+工作中应用：
+
+<img src="/Users/t/Library/Application Support/typora-user-images/image-20191112150902325.png" alt="image-20191112150902325" style="zoom:50%;" />
+
+需求：点击button的位置B出现，点击其他位置B进行隐藏。
+
+限制条件：
+
+1. 带有 button 的图形为 canvas 是一个完整的插件，B是其一个功能，所以不允许向外层冒方法。
+2. A不是幕布，A中有各式各样的组件。
+3. button 的点击事件是通过计算点击时的位置返回 boolean类型 来进一步处理和触发B的显示和隐藏。
+
+遇到的问题：
+
+1. 因为是 canvas 无法绑定其中按钮的点击事件，只能通过限制条件3返回为 true 时来进行处理。
+2. 当为 true 进行列表显示并为其添加聚焦事件focus()，当点击时就会出现问题，点击分为按下和抬起两个步骤，当按下时候执行上述方法列表显示获取焦点，但抬起时位置在按钮上而不是在B身上，所以触发了B的 blur 事件，列表会显示一下后隐藏。
+
+解决方案：当按钮显示时添加个状态，在B的 blur 事件上 添加 `if` 条件 改变状态值并再次使其获取焦点。
+
 ### DOMContentLoaded 与 load 事件
 
 DOMContentLoaded:当初始的 HTML 文档被完全加载和解析完成之后，DOMContentLoaded 事件被触发，而无需等待样式表、图像和子框架的完成加载。
@@ -351,7 +380,7 @@ load:当一个资源及其依赖资源已完成加载时，将触发load事件�
 
 async、defer与DOMContentLoaded详细关系请看[这里](https://www.cnblogs.com/Bonnie3449/p/8419609.html)
 
-### onmouseout 与 onmouseleave 离开元素事件
+### mouseout 与 mouseleave 离开元素事件
 
 - onmouseout 离开当前**DOM元素或其子元素**时候触发
 - onmouseleave 离开当前**绑定的DOM元素**时候触发
@@ -386,7 +415,102 @@ js是**单线程语言**，JavaScript版的"多线程"都是用单线程模拟�
 - fulfilled:     成功
 - rejected:    失败
 
+状态改变只能是 pending->fulfilled 或者 pending->rejected，状态一旦改变则不能再变。
+
 .then(回调函数)
+
+.catch()，
+
+Promise 每次调用 .then 或者 .catch 都会返回的一个新的 Promise 实例，从而实现了链式调用。。
+
+### 有以下注意点：
+
+1. 构造函数中的 resolve 或 reject 只有第一次执行有效，多次调用没有任何作用。
+
+   ```javascript
+   const promise = new Promise((resolve, reject) => {
+     resolve('success1')
+     reject('error')
+     resolve('success2')
+   })
+   promise
+     .then((res) => {
+       console.log('then: ', res)
+     })
+     .catch((err) => {
+       console.log('catch: ', err)
+     })
+   
+   // =>then: success1
+   ```
+
+   
+
+2. promise 内部状态一经改变，并且有了一个值，那么后续每次调用 .then 或者 .catch 都会直接拿到该值。
+
+   ```javascript
+   const promise = new Promise((resolve, reject) => {
+     setTimeout(() => {
+       console.log('once')
+       resolve('success')
+     }, 1000)
+   })
+   
+   const start = Date.now()
+   promise.then((res) => {
+     console.log(res, Date.now() - start)
+   })
+   promise.then((res) => {
+     console.log(res, Date.now() - start)
+   })
+   
+   // =>once
+   // =>success 1005
+   // =>success 1007
+   ```
+
+3. .then 或者 .catch 中 return 一个 error 对象不会抛出错误。
+
+   ```javascript
+   Promise.resolve()
+     .then(() => {
+       return new Error('error!!!')
+     })
+     .then((res) => {
+       console.log('then: ', res)
+     })
+     .catch((err) => {
+       console.log('catch: ', err)
+     })
+     
+     // =>then: Error: error!!!
+     
+     
+     // 如果要抛出错误写成以下格式
+     return Promise.reject(new Error('error!!!'))
+   	throw new Error('error!!!')
+   ```
+
+4. .then 或 .catch 返回的值不能是 promise 本身，否则会造成死循环。
+
+5. .then 或者 .catch 的参数期望是函数，传入非函数则会发生值穿透。
+
+   ```javascript
+   Promise.resolve(1)
+     .then(2)
+     .then(Promise.resolve(3))
+     .then(console.log)
+   
+   // =>1
+   ```
+
+6. 
+
+
+
+promise
+
+
 
 ## async/await 处理异步
 
