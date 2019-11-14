@@ -158,7 +158,55 @@ function extendsMixin () {
 }
 ```
 
+### apply，call，bind 的区别
 
+这三个函数都是改变了当前函数的 this 指向。
+
+- apply 接收的是数组，并会立即执行
+- call 接收的是用逗号隔开的参数，并会立即执行
+- bind 接收的是用逗号隔开的参数，但是不会立即执行，而是返回一个新的函数
+
+**进阶** ：源码实现
+
+实现思路
+
+1. 把函数变成 object 的一个属性。
+2. 执行这个 object 下面的函数。
+3. 删除这个 object 下的这个函数。
+
+```javascript
+Function.prototypr.call(context, ...args){
+	context = context || window // 考虑 context = null 
+  context.fn = this
+  let result = context.fn(..args)
+  delete context.fn
+  return result
+}
+```
+
+apply 和 call 是一个道理
+
+```javascript
+Function.prototype.apply(context, args)
+{
+    context = context || window;
+    context.fn = this;
+    var result = context.fn(...args);
+    delete context.fn;
+    return result;
+}
+```
+
+bind 有一点特殊
+
+```javascript
+Function.prototype.bind = function (context, ...rest) {
+    var self = this;
+    return function F(...args) {
+        return self.apply(context, rest.concat(args)); // 参数合并到一起，作为函数的参数
+    }
+}
+```
 
 ## 深拷贝与浅拷贝
 
