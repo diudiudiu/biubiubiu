@@ -166,7 +166,7 @@ Grid 是一个二维布局，将网页划分成一个个网格，可以任意组
 
 网格项     ==> 父容器内的子级 是HTML中能够找到的DOM元素
 
-网格线.    ==> 组成网格项的分界线
+网格线    ==> 组成网格项的分界线
 
 网格轨道  ==> 两个相邻的网格线之间
 
@@ -176,4 +176,40 @@ Grid 是一个二维布局，将网页划分成一个个网格，可以任意组
 
 #### max-height max-width 当图片的过长或者过宽时，按比例缩放。      
 
-#### transform 会影响子元素的 position：fixed的定位 ，其子元素的相对的不再是页面的左上角，而是父元素的左上角。            
+#### transform
+
+##### 工作中遇到的问题：
+
+- 一个位置高度元素 father 需要进行居中，那么就用到了 transform 。
+
+- ```css
+  .father{
+  	position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+  ```
+
+- 该元素下有一个固定定位的元素son position: fixed ，这时会发现 son 并没有依赖页面左上角定位，而是依赖的是父元素 father 的位置。
+
+会影响子元素的 position：fixed的定位 ，其子元素的相对的不再是页面的左上角，而是父元素的左上角。
+
+#### iframe
+
+##### 工作中遇到的问题：
+
+- iframe 如果想自己增加个 header 类似一个浏览器的上边框的UI样式。
+
+- ```css
+  header{
+  	height: 40px;
+  }
+  iframe{
+  	width: 100%;
+  	height: 100%;
+  }
+  ```
+
+此时iframe 的内部，如果出现了滚动条，那么它将会隐藏 40px 的高度。所以需要在iframe的属性上，使用 clac 函数进行精确计算。
+

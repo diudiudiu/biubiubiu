@@ -211,3 +211,12 @@ map无法进行中断
 for循环、for...in,for...of，支持await
 for和for...of中可以使用break和continue
 for...in会忽略continue和break
+
+原型链
+
+每一个javascript对象(除null外)创建的时候，就会与之关联另一个对象，这个对象就是我们所说的原型，每一个对象都会从原型中“继承”属性。
+
+这是每个对象(除null外)都会有的属性，叫做__proto__，这个属性会指向该对象的原型。
+
+每个原型都有一个constructor属性，指向该关联的构造函数。
+

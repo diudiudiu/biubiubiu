@@ -202,3 +202,73 @@ rootGetters 用于获取其他模块getter；
 
 在所有的vuex中 有一个 **rootState** 表示的是列表中所有vuex文件中的 state ,调用时候 **rootState**.文件名.state属性
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Vue 响应系统
+
+
+
+react setstate（）
+
+Vue Watcher 响应式 单文件组件
+
+dep  通知器 收集器
+
+
+
+
+
+#### computed 缓存 懒模式 与 getter区别
+
+拦截 获取设置 setter getter
+
+
+
+数组的监听 重写方法
+
+ 添加对象属性 有局限
+
+## vue3
+
+Proxy 元编程
+
+Reflect  comlink
+
+
+
+Map 代替dep
+
+effect 代替watcher
+
+ 懒监听响应式 取值的时候
+
+函数 push 触发get2次 一次是函数 一次是length
+
+
+
+Proxy obj define
+
+属性添加和删除 数组更改长度变化
+
+性能 
+
