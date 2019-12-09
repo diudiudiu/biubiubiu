@@ -224,7 +224,32 @@ rootGetters 用于获取其他模块getter；
 
 
 
-## Vue 响应系统
+## Vue3.0 响应系统
+
+- ts语法
+
+
+- 数据绑定（proxy） 2.x  （Object.defineprototype()）
+- 基于函数的 composition API
+
+- 初始化
+
+1. ```javascript
+   const App = {
+   	setup() { //类似于created ,只会执行一次
+   		let state = Vue.reactive({name: 'zf'}) // 返回的是一个 proxy
+       return { // 类似于 data ，这个对象会座位渲染的上下文
+         state
+       }
+   	}
+   }
+   Vue.createApp().mount(App,container) 
+   // 创建并挂载到 container 上，不再是 new 一个 Vue 对象
+   ```
+
+   
+
+
 
 
 
