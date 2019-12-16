@@ -206,6 +206,26 @@ function getInfo (name:any,age?:any):any{
 
 
 
+### 接口
 
+- 接口的作用就是为了检查结构类型
+- 带有可选属性的接口与普通的接口定义差不多，只是在可选属性名字定义的后面加一个`?`符号。
+- 一些对象属性只能在对象刚刚创建的时候修改其值。 可以在属性名前用 `readonly`来指定只读属性。
+
+
+
+```typescript
+interface LabelledValue {
+  label: string;
+  width?: number; // 可选属性
+  readonly x: number; // 只读属性
+}
+
+function printLabel(labelledObj: LabelledValue) {
+  console.log(labelledObj.label);
+}
+```
+
+LabelledValue 接口就好比一个名字，用来描述上面例子里的要求。 它代表了有一个 label 属性且类型为 string 的对象。
 
 ### 类

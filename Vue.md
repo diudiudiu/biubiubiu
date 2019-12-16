@@ -1,20 +1,5 @@
 # Vue.js
 
-### 数据双向绑定
-
-原理:通过Object.defineProperty()来劫持各个属性的setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。
-
-首先需要定义监听器把对象每一项都转化成可观测对象，创建订阅器 Dep类 订阅器添加在监听器，创建订阅者Watcher
-
-
-
-
-
-components组件内data为什么返回对象？
-如果引用赋值给组件的话，所有组件公用一个数据，一个改变其它都改变。
-
-
-
 ## vue 的八个生命周期
 
 1. ### beforeCreate() 
@@ -206,6 +191,49 @@ rootGetters 用于获取其他模块getter；
 
 
 
+## Vue 2
+
+### 数据双向绑定原理
+
+首先把 data 中的对象传入 observer 观察者函数中，walk 深度监听对象的每个属性，并通过 defineReactive 函数劫持各个属性的setter，getter。
+
+数组等函数劫持，先获取原型，并进行继承，遍历每个方法，在内部增加更新视图函数，再执行原型上的原生方法。
+
+```javascript
+// 深度监听
+walk (obj: Object) {
+  const keys = Object.keys(obj)
+  for (let i = 0; i < keys.length; i++) {
+    defineReactive(obj, keys[i], obj[keys[i]])
+  }
+}
+// 劫持各个属性
+function defineReactive (obj: Object, key: string, val: any) {
+  const dep = new Dep()
+  Object.defineProperty(obj, key, {
+    get: function reactiveGetter () {
+      if (Dep.target) {
+        dep.depend() // 依赖收集
+      }
+      return value
+    },
+    set: function reactiveSetter (newVal) {
+      observe(newVal)
+      dep.notify()
+    }
+  })
+}
+
+
+```
+
+
+
+问题：
+
+- 不支持新增属性
+- 会进行递归
+- 改变数组的 length 无效
 
 
 
@@ -213,16 +241,31 @@ rootGetters 用于获取其他模块getter；
 
 
 
+原理:通过Object.defineProperty()来劫持各个属性的setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。
+
+首先需要定义监听器把对象每一项都转化成可观测对象，创建订阅器 Dep类 订阅器添加在监听器，创建订阅者Watcher
 
 
 
 
 
+## Vue3
 
+### 响应数据
 
+通过 Proxy + Reflect 反射 代替了Object.defineProperty()。
 
+在递归对象属性时，不是在最开始设置的时候递归而是在取用时候进行递归返回。在 get 方法进行多层次代理。
 
+在 set 中需要进行判断是添加属性还是要修改属性，比如数组的 push 方法 第一次调用 set 是新增加一个，第二次调用是更改这个数组的 length 属性。 
 
+使用 WeakMap 进行记录，toProxy 放置的是 原对象：代理过的对象，toRaw 放置的是被代理过的对象：原对象。防止多次代理。 
+
+Reflect 对象代替了传统的 Object 的一些方法，具有返回值，能够确定是否执行成功。
+
+### 依赖收集发布订阅
+
+effect 方法 会执行两次，默认先执行一次，之后依赖的数据变化了，会再次执行
 
 ## Vue3.0 响应系统
 
