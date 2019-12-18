@@ -225,3 +225,13 @@ column-rule ：属性设置列之间的宽度、样式和颜色规则。
 
 此时iframe 的内部，如果出现了滚动条，那么它将会隐藏 40px 的高度。所以需要在iframe的属性上，使用 clac 函数进行精确计算。
 
+插入一个 获取 iframe 中的元素的过程
+
+```javascript
+var iframe = document.getElementsByTagName('iframe')[0];
+var ifr_document = iframe.contentWindow.document
+//iframe中的文档内容
+```
+
+
+
