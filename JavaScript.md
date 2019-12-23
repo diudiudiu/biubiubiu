@@ -158,6 +158,60 @@ function extendsMixin () {
 }
 ```
 
+
+
+### Set Map WeakSet WeakMap 
+
+1. ### Set 集合
+
+   类似数组，以[value,value]存储的，但是里面不能有重复值，如果有重复值将只显示一个。
+
+   - size：属性 返回集合的元素个数。（类似数组的长度length）
+
+   - add(value)方法: 向集合中添加一个元素value。
+
+     **如果向集合中添加一个已经存在的元素，不报错但是集合不会改变。**
+
+   - delete(value)方法: 从集合中删除元素value。
+
+   - has(value)方法: 判断value是否在集合中，返回true或false.
+
+   - clear()方法: 清空集合。
+
+2. ### Map 字典
+
+   种类型的值（包括object）都可以作为key，以[key,value]存储的，里面不能有重复值。
+
+   - size: 属性，取出 Map 的长度
+   - set(key, value)：方法，向 Map 中添加新元素
+   - get(key)：方法，通过键查找特定的数值并返回
+   - has(key)：方法，判断 Map 中是否存在键key
+   - delete(key)：方法，通过键 key 从 Map 中移除对应的数据
+   - clear()：方法，将这个字典中的所有元素删除
+     
+
+3. ### WeakMap
+
+   WeakMap 跟 Map 结构类似，也拥有 get 、has 、 delete 等方法，使用法和使用途都一样。
+
+   不同之处
+
+   - WeakMap 只接受对象作为键名，但 null 不能作为键名。
+   - WeakMap 不支持 clear 方法，不支持遍历，没有 keys 、 values 、entries 、 forEach 这4个方法，也没有 size 属性。
+   - WeakMap 键名中的引用类型是弱引使用，假如这个引使用类型的值被垃圾机制回收了，WeakMap 实例中的对应键值对也会消失。WeakMap 中的 key 不计入垃圾回收，若只有 WeakMap 中的 key 对某个对象有引用，那么此时执行垃圾回收时就会回收该对象， Map 中的 key 是计入垃圾回收。
+
+4. ### WeakSet
+
+   WeakSet 跟 Set 结构类似，只有 get 、has 、 delete 三个方法。
+
+   不同之处：
+
+   - WeakSet 的成员只能是对象。
+   - WeakSet 不支持 clear 方法，不支持遍历，没有 forEach 方法和 size 属性。
+   -  WeakSet 中的对象都是弱引用，即垃圾回收机制不考虑  WeakSet 对该对象的引用，只 WeakSet 引用该对象，那么垃圾回收机制会自动回收该对象所占用的内存。
+
+
+
 ### apply，call，bind 的区别
 
 这三个函数都是改变了当前函数的 this 指向。

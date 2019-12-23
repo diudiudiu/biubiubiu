@@ -1,5 +1,12 @@
 # css篇
 
+### @import 与 link 导入的区别
+
+- link 是一种 HTML 标签，@import是一种 CSS 规则。
+- link 会和页面一起加载，@import在页面加载完成后才加载。
+- link 没有兼容性问题，@import最低支持到 IE5.5。
+- link 引入的样式可以直接进行 DOM 修改，@import 引入的样式不能直接通过 DOM 修改。
+
 ### CSS-reset
 
 在 HTML标签在浏览器里有默认的样式，不同浏览器的默认样式之间也会有差别。为了更好的布局和开发，需要清除HTML标签的的默认样式。这就是CSS reset。实际上就是自己用CSS来重新定义各个HTML标签。各个网站论坛有着各种各样的CSS reset，当然CSS reset也可以按照个人习惯去设置。
